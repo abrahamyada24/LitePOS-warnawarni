@@ -1,0 +1,849 @@
+import { useState, useEffect, useRef } from "react";
+
+// ─── DESIGN TOKENS ────────────────────────────────────────────────────────────
+const C = {
+  primary:      "#1A5CFF",
+  primaryDeep:  "#1240CC",
+  primaryLight: "#EEF3FF",
+  primaryMid:   "#3D7BFF",
+  accent:       "#00C896",
+  accentLight:  "#E6FAF5",
+  danger:       "#FF3B5C",
+  dangerLight:  "#FFF0F3",
+  warning:      "#FF9500",
+  warningLight: "#FFF5E6",
+  white:        "#FFFFFF",
+  bg:           "#F5F7FC",
+  card:         "#FFFFFF",
+  border:       "#E8EEFF",
+  textPrimary:  "#0D1B4B",
+  textSecondary:"#6B7A9F",
+  textMuted:    "#A0ADCC",
+};
+
+const fmt = (n) => "Rp " + n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
+// ─── SVG ICONS ────────────────────────────────────────────────────────────────
+const Icon = ({ name, size = 20, color = C.textPrimary, style = {} }) => {
+  const s = { width: size, height: size, display: "inline-block", flexShrink: 0, ...style };
+  const p = {
+    home:          <><path d="M10 2L2 8v12h6v-5h4v5h6V8z" stroke={color} strokeWidth="1.6" fill="none" strokeLinejoin="round"/></>,
+    cube:          <><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke={color} strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/></>,
+    chart:         <><rect x="3" y="12" width="4" height="9" rx="1" fill={color}/><rect x="10" y="7" width="4" height="14" rx="1" fill={color}/><rect x="17" y="3" width="4" height="18" rx="1" fill={color}/></>,
+    people:        <><circle cx="9" cy="7" r="3" stroke={color} strokeWidth="1.6" fill="none"/><path d="M3 21v-2a4 4 0 014-4h4a4 4 0 014 4v2" stroke={color} strokeWidth="1.6" fill="none" strokeLinecap="round"/><path d="M16 3.13a4 4 0 010 7.75M21 21v-2a4 4 0 00-3-3.87" stroke={color} strokeWidth="1.6" fill="none" strokeLinecap="round"/></>,
+    settings:      <><circle cx="12" cy="12" r="3" stroke={color} strokeWidth="1.6" fill="none"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z" stroke={color} strokeWidth="1.6" fill="none"/></>,
+    bell:          <><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0" stroke={color} strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/></>,
+    logout:        <><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9" stroke={color} strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/></>,
+    user:          <><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke={color} strokeWidth="1.6" fill="none" strokeLinecap="round"/><circle cx="12" cy="7" r="4" stroke={color} strokeWidth="1.6" fill="none"/></>,
+    "trending-up": <><polyline points="23 6 13.5 15.5 8.5 10.5 1 18" stroke={color} strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/><polyline points="17 6 23 6 23 12" stroke={color} strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/></>,
+    clock:         <><circle cx="12" cy="12" r="10" stroke={color} strokeWidth="1.6" fill="none"/><polyline points="12 6 12 12 16 14" stroke={color} strokeWidth="1.6" fill="none" strokeLinecap="round"/></>,
+    cart:          <><circle cx="9" cy="21" r="1" fill={color}/><circle cx="20" cy="21" r="1" fill={color}/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6" stroke={color} strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/></>,
+    "cart-check":  <><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6" stroke={color} strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/><circle cx="9" cy="21" r="1" fill={color}/><circle cx="20" cy="21" r="1" fill={color}/><polyline points="9 11 11 13 15 9" stroke={color} strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/></>,
+    package:       <><line x1="16.5" y1="9.4" x2="7.5" y2="4.21" stroke={color} strokeWidth="1.6" strokeLinecap="round"/><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 002 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" stroke={color} strokeWidth="1.6" fill="none"/><polyline points="3.27 6.96 12 12.01 20.73 6.96" stroke={color} strokeWidth="1.6" fill="none"/><line x1="12" y1="22.08" x2="12" y2="12" stroke={color} strokeWidth="1.6"/></>,
+    alert:         <><circle cx="12" cy="12" r="10" stroke={color} strokeWidth="1.6" fill="none"/><line x1="12" y1="8" x2="12" y2="12" stroke={color} strokeWidth="1.6" strokeLinecap="round"/><line x1="12" y1="16" x2="12.01" y2="16" stroke={color} strokeWidth="2" strokeLinecap="round"/></>,
+    "arrow-right": <><line x1="5" y1="12" x2="19" y2="12" stroke={color} strokeWidth="1.6" strokeLinecap="round"/><polyline points="12 5 19 12 12 19" stroke={color} strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/></>,
+    "arrow-left":  <><line x1="19" y1="12" x2="5" y2="12" stroke={color} strokeWidth="1.6" strokeLinecap="round"/><polyline points="12 19 5 12 12 5" stroke={color} strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/></>,
+    "chevron-right":<><polyline points="9 18 15 12 9 6" stroke={color} strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round"/></>,
+    plus:          <><line x1="12" y1="5" x2="12" y2="19" stroke={color} strokeWidth="1.8" strokeLinecap="round"/><line x1="5" y1="12" x2="19" y2="12" stroke={color} strokeWidth="1.8" strokeLinecap="round"/></>,
+    minus:         <><line x1="5" y1="12" x2="19" y2="12" stroke={color} strokeWidth="1.8" strokeLinecap="round"/></>,
+    close:         <><line x1="18" y1="6" x2="6" y2="18" stroke={color} strokeWidth="1.8" strokeLinecap="round"/><line x1="6" y1="6" x2="18" y2="18" stroke={color} strokeWidth="1.8" strokeLinecap="round"/></>,
+    search:        <><circle cx="11" cy="11" r="8" stroke={color} strokeWidth="1.6" fill="none"/><line x1="21" y1="21" x2="16.65" y2="16.65" stroke={color} strokeWidth="1.6" strokeLinecap="round"/></>,
+    pos:           <><rect x="2" y="3" width="20" height="14" rx="2" stroke={color} strokeWidth="1.6" fill="none"/><line x1="8" y1="21" x2="16" y2="21" stroke={color} strokeWidth="1.6" strokeLinecap="round"/><line x1="12" y1="17" x2="12" y2="21" stroke={color} strokeWidth="1.6" strokeLinecap="round"/><line x1="6" y1="8" x2="6" y2="8" stroke={color} strokeWidth="2.5" strokeLinecap="round"/><line x1="10" y1="8" x2="10" y2="8" stroke={color} strokeWidth="2.5" strokeLinecap="round"/><line x1="14" y1="8" x2="14" y2="8" stroke={color} strokeWidth="2.5" strokeLinecap="round"/><line x1="18" y1="8" x2="18" y2="8" stroke={color} strokeWidth="2.5" strokeLinecap="round"/><line x1="6" y1="12" x2="6" y2="12" stroke={color} strokeWidth="2.5" strokeLinecap="round"/><line x1="10" y1="12" x2="10" y2="12" stroke={color} strokeWidth="2.5" strokeLinecap="round"/><line x1="14" y1="12" x2="18" y2="12" stroke={color} strokeWidth="2.5" strokeLinecap="round"/></>,
+    database:      <><ellipse cx="12" cy="5" rx="9" ry="3" stroke={color} strokeWidth="1.6" fill="none"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" stroke={color} strokeWidth="1.6" fill="none"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" stroke={color} strokeWidth="1.6" fill="none"/></>,
+    "file-text":   <><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke={color} strokeWidth="1.6" fill="none"/><polyline points="14 2 14 8 20 8" stroke={color} strokeWidth="1.6" fill="none"/><line x1="16" y1="13" x2="8" y2="13" stroke={color} strokeWidth="1.6" strokeLinecap="round"/><line x1="16" y1="17" x2="8" y2="17" stroke={color} strokeWidth="1.6" strokeLinecap="round"/></>,
+    undo:          <><polyline points="9 14 4 9 9 4" stroke={color} strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/><path d="M20 20v-7a4 4 0 00-4-4H4" stroke={color} strokeWidth="1.6" fill="none" strokeLinecap="round"/></>,
+    "cash-register":<><rect x="2" y="7" width="20" height="14" rx="2" stroke={color} strokeWidth="1.6" fill="none"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" stroke={color} strokeWidth="1.6" fill="none"/><line x1="12" y1="12" x2="12" y2="16" stroke={color} strokeWidth="1.6" strokeLinecap="round"/><line x1="10" y1="14" x2="14" y2="14" stroke={color} strokeWidth="1.6" strokeLinecap="round"/></>,
+    food:          <><path d="M18 8h1a4 4 0 010 8h-1" stroke={color} strokeWidth="1.6" fill="none" strokeLinecap="round"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z" stroke={color} strokeWidth="1.6" fill="none"/><line x1="6" y1="1" x2="6" y2="4" stroke={color} strokeWidth="1.6" strokeLinecap="round"/><line x1="10" y1="1" x2="10" y2="4" stroke={color} strokeWidth="1.6" strokeLinecap="round"/><line x1="14" y1="1" x2="14" y2="4" stroke={color} strokeWidth="1.6" strokeLinecap="round"/></>,
+    "grid":        <><rect x="3" y="3" width="7" height="7" rx="1" stroke={color} strokeWidth="1.6" fill="none"/><rect x="14" y="3" width="7" height="7" rx="1" stroke={color} strokeWidth="1.6" fill="none"/><rect x="3" y="14" width="7" height="7" rx="1" stroke={color} strokeWidth="1.6" fill="none"/><rect x="14" y="14" width="7" height="7" rx="1" stroke={color} strokeWidth="1.6" fill="none"/></>,
+    phone:         <><rect x="5" y="2" width="14" height="20" rx="2" stroke={color} strokeWidth="1.6" fill="none"/><line x1="12" y1="18" x2="12.01" y2="18" stroke={color} strokeWidth="2.5" strokeLinecap="round"/></>,
+    tablet:        <><rect x="4" y="2" width="16" height="20" rx="2" stroke={color} strokeWidth="1.6" fill="none"/><line x1="12" y1="18" x2="12.01" y2="18" stroke={color} strokeWidth="2.5" strokeLinecap="round"/></>,
+  };
+  return (
+    <svg viewBox="0 0 24 24" style={s} xmlns="http://www.w3.org/2000/svg">
+      {p[name] || <circle cx="12" cy="12" r="8" stroke={color} strokeWidth="1.6" fill="none"/>}
+    </svg>
+  );
+};
+
+// ─── DATA ─────────────────────────────────────────────────────────────────────
+const TABS = [
+  { key: "home",      icon: "home",      label: "Beranda"    },
+  { key: "inventory", icon: "cube",      label: "Inventori"  },
+  { key: "report",    icon: "chart",     label: "Laporan"    },
+  { key: "contact",   icon: "people",    label: "Kontak"     },
+  { key: "settings",  icon: "settings",  label: "Pengaturan" },
+];
+const PRODUCTS = [
+  { id:"1", name:"Kopi Susu",     price:18000, cat:"Minuman" },
+  { id:"2", name:"Matcha Latte",  price:22000, cat:"Minuman" },
+  { id:"3", name:"Nasi Goreng",   price:25000, cat:"Makanan" },
+  { id:"4", name:"Mie Ayam",      price:20000, cat:"Makanan" },
+  { id:"5", name:"Roti Bakar",    price:12000, cat:"Makanan" },
+  { id:"6", name:"Es Teh Manis",  price:8000,  cat:"Minuman" },
+  { id:"7", name:"Americano",     price:20000, cat:"Minuman" },
+  { id:"8", name:"Pisang Goreng", price:10000, cat:"Snack"   },
+  { id:"9", name:"Cappuccino",    price:23000, cat:"Minuman" },
+  { id:"10",name:"Kentang Goreng",price:15000, cat:"Snack"   },
+];
+const CATS = ["Semua","Minuman","Makanan","Snack"];
+const ACTIVITY = [
+  { id:1, icon:"cart-check", title:"Transaksi #0042", time:"10:32 · Hari ini", amount:"125.000", type:"income"  },
+  { id:2, icon:"cart-check", title:"Transaksi #0041", time:"09:15 · Hari ini", amount:"88.500",  type:"income"  },
+  { id:3, icon:"undo",       title:"Retur #0005",     time:"08:50 · Hari ini", amount:"30.000",  type:"expense" },
+  { id:4, icon:"cart-check", title:"Transaksi #0040", time:"Kemarin",           amount:"250.000", type:"income"  },
+];
+
+// ─── SHARED COMPONENTS ────────────────────────────────────────────────────────
+// Side Navigation for Tablet
+const SideNav = ({ active, onChange }) => (
+  <div style={{
+    width: 220, background: C.card, borderRight: `1px solid ${C.border}`,
+    display: "flex", flexDirection: "column", padding: "20px 12px",
+    gap: 4, flexShrink: 0,
+  }}>
+    <div style={{ display: "flex", alignItems: "center", gap: 10, padding: "8px 12px 20px" }}>
+      <div style={{
+        width: 36, height: 36, borderRadius: 10, background: C.primary,
+        display: "flex", alignItems: "center", justifyContent: "center",
+      }}>
+        <Icon name="pos" size={18} color={C.white} />
+      </div>
+      <div>
+        <div style={{ fontSize: 14, fontWeight: 700, color: C.textPrimary, fontFamily:"'Poppins',sans-serif" }}>KasirKu</div>
+        <div style={{ fontSize: 11, color: C.textSecondary, fontFamily:"'Poppins',sans-serif" }}>Point of Sales</div>
+      </div>
+    </div>
+
+    {TABS.map(t => {
+      const isActive = t.key === active;
+      return (
+        <button key={t.key} onClick={() => onChange(t.key)} style={{
+          display: "flex", alignItems: "center", gap: 12,
+          padding: "11px 14px", borderRadius: 12, border: "none", cursor: "pointer",
+          background: isActive ? C.primaryLight : "transparent",
+          transition: "all 0.18s",
+        }}
+          onMouseEnter={e => { if (!isActive) e.currentTarget.style.background = C.bg; }}
+          onMouseLeave={e => { if (!isActive) e.currentTarget.style.background = "transparent"; }}
+        >
+          <Icon name={t.icon} size={20} color={isActive ? C.primary : C.textSecondary} />
+          <span style={{
+            fontSize: 13, fontWeight: isActive ? 600 : 400,
+            color: isActive ? C.primary : C.textSecondary,
+            fontFamily: "'Poppins',sans-serif",
+          }}>{t.label}</span>
+          {isActive && <div style={{ marginLeft: "auto", width: 6, height: 6, borderRadius: 3, background: C.primary }}/>}
+        </button>
+      );
+    })}
+
+    <div style={{ marginTop: "auto" }}>
+      <div style={{ height: 1, background: C.border, marginBottom: 12 }}/>
+      <div style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 14px" }}>
+        <div style={{ width: 34, height: 34, borderRadius: 17, background: C.primaryLight, display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <Icon name="user" size={17} color={C.primary} />
+        </div>
+        <div style={{ flex: 1 }}>
+          <div style={{ fontSize: 13, fontWeight: 600, color: C.textPrimary, fontFamily:"'Poppins',sans-serif" }}>Owner</div>
+          <div style={{ fontSize: 11, color: C.textSecondary, fontFamily:"'Poppins',sans-serif" }}>Admin</div>
+        </div>
+        <button style={{ background: "none", border: "none", cursor: "pointer", padding: 4 }}>
+          <Icon name="logout" size={17} color={C.danger} />
+        </button>
+      </div>
+    </div>
+  </div>
+);
+
+// Bottom Tab for Phone
+const BottomTab = ({ active, onChange }) => (
+  <div style={{
+    display: "flex", background: C.card,
+    borderTop: `1px solid ${C.border}`,
+    boxShadow: "0 -4px 20px rgba(26,92,255,0.08)",
+    paddingBottom: 8, paddingTop: 8,
+  }}>
+    {TABS.map(t => {
+      const isActive = t.key === active;
+      return (
+        <button key={t.key} onClick={() => onChange(t.key)} style={{
+          flex: 1, display: "flex", flexDirection: "column", alignItems: "center",
+          gap: 3, background: "none", border: "none", cursor: "pointer", padding: "4px 0", position: "relative",
+        }}>
+          {isActive && <div style={{ position: "absolute", top: 0, width: 28, height: 3, borderRadius: 2, background: C.primary }}/>}
+          <Icon name={t.icon} size={21} color={isActive ? C.primary : C.textMuted} />
+          <span style={{ fontSize: 10, fontWeight: isActive ? 600 : 400, color: isActive ? C.primary : C.textMuted, fontFamily:"'Poppins',sans-serif" }}>{t.label}</span>
+        </button>
+      );
+    })}
+  </div>
+);
+
+// ─── DASHBOARD CONTENT ────────────────────────────────────────────────────────
+const DashboardContent = ({ isTablet, onNavigate }) => {
+  const [vis, setVis] = useState(false);
+  useEffect(() => { setTimeout(() => setVis(true), 60); }, []);
+
+  const menuItems = [
+    { icon:"people",    title:"Kontak & Pelanggan", sub:"Data pelanggan & supplier", color:C.accent,   bg:C.accentLight  },
+    { icon:"file-text", title:"Laporan & Pengeluaran", sub:"Histori, retur, dan biaya", color:C.primary,  bg:C.primaryLight },
+    { icon:"database",  title:"Kelola Data",         sub:"Produk, kategori & stok",  color:"#7B61FF",  bg:"#F0EDFF"      },
+  ];
+
+  const px = isTablet ? 28 : 20;
+  const fs = isTablet ? { title: 18, hero: 34, stat: 24, label: 13, sub: 13 } : { title: 16, hero: 28, stat: 20, label: 11, sub: 12 };
+
+  return (
+    <div style={{ flex: 1, overflowY: "auto", background: C.bg }}>
+      {/* Header */}
+      {!isTablet && (
+        <div style={{
+          display:"flex", alignItems:"center", justifyContent:"space-between",
+          padding: `20px ${px}px 14px`,
+          opacity: vis ? 1 : 0, transform: vis ? "none" : "translateY(-8px)",
+          transition: "all 0.4s ease",
+        }}>
+          <div style={{ display:"flex", alignItems:"center", gap:10 }}>
+            <div style={{ width:42, height:42, borderRadius:21, background:C.primaryLight, display:"flex", alignItems:"center", justifyContent:"center" }}>
+              <Icon name="user" size={20} color={C.primary} />
+            </div>
+            <div>
+              <div style={{ fontSize:12, color:C.textSecondary, fontFamily:"'Poppins',sans-serif" }}>Selamat Pagi</div>
+              <div style={{ fontSize:16, fontWeight:700, color:C.textPrimary, fontFamily:"'Poppins',sans-serif" }}>Owner</div>
+            </div>
+          </div>
+          <div style={{ display:"flex", gap:8 }}>
+            <button style={{ width:40, height:40, borderRadius:20, background:C.card, border:`1px solid ${C.border}`, cursor:"pointer", display:"flex", alignItems:"center", justifyContent:"center", position:"relative", boxShadow:"0 2px 8px rgba(26,92,255,0.08)" }}>
+              <Icon name="bell" size={20} color={C.textPrimary} />
+              <div style={{ position:"absolute", top:9, right:9, width:8, height:8, borderRadius:4, background:C.danger, border:`1.5px solid ${C.white}` }}/>
+            </button>
+            <button style={{ width:40, height:40, borderRadius:20, background:C.dangerLight, border:"none", cursor:"pointer", display:"flex", alignItems:"center", justifyContent:"center" }}>
+              <Icon name="logout" size={19} color={C.danger} />
+            </button>
+          </div>
+        </div>
+      )}
+
+      {isTablet && (
+        <div style={{ display:"flex", alignItems:"center", justifyContent:"space-between", padding:`24px ${px}px 16px` }}>
+          <div>
+            <div style={{ fontSize:13, color:C.textSecondary, fontFamily:"'Poppins',sans-serif" }}>Selamat Pagi,</div>
+            <div style={{ fontSize:22, fontWeight:700, color:C.textPrimary, fontFamily:"'Poppins',sans-serif" }}>Owner</div>
+          </div>
+          <button style={{ width:42, height:42, borderRadius:21, background:C.card, border:`1px solid ${C.border}`, cursor:"pointer", display:"flex", alignItems:"center", justifyContent:"center", position:"relative", boxShadow:"0 2px 8px rgba(26,92,255,0.08)" }}>
+            <Icon name="bell" size={21} color={C.textPrimary} />
+            <div style={{ position:"absolute", top:10, right:10, width:8, height:8, borderRadius:4, background:C.danger, border:`1.5px solid ${C.white}` }}/>
+          </button>
+        </div>
+      )}
+
+      <div style={{ padding: `0 ${px}px 28px` }}>
+
+        {/* Tablet: Hero + Stats side-by-side */}
+        {isTablet ? (
+          <div style={{ display:"flex", gap:20, marginBottom:24,
+            opacity: vis ? 1 : 0, transform: vis ? "none" : "translateY(14px)",
+            transition: "all 0.45s ease 0.05s",
+          }}>
+            {/* Hero */}
+            <div style={{
+              flex: 2, background:`linear-gradient(135deg, ${C.primary} 0%, ${C.primaryDeep} 100%)`,
+              borderRadius:24, padding:24, position:"relative", overflow:"hidden",
+              boxShadow:`0 12px 36px rgba(26,92,255,0.36)`,
+            }}>
+              <div style={{ position:"absolute", width:200, height:200, borderRadius:100, background:"rgba(255,255,255,0.07)", top:-80, right:-50 }}/>
+              <div style={{ position:"absolute", width:120, height:120, borderRadius:60, background:"rgba(255,255,255,0.05)", bottom:-40, left:20 }}/>
+              <div style={{ display:"flex", justifyContent:"space-between", alignItems:"flex-start", marginBottom:16 }}>
+                <div>
+                  <div style={{ fontSize:12, color:"rgba(255,255,255,0.7)", fontFamily:"'Poppins',sans-serif", letterSpacing:1, textTransform:"uppercase", marginBottom:4 }}>Pendapatan Hari Ini</div>
+                  <div style={{ fontSize:fs.hero, fontWeight:700, color:C.white, fontFamily:"'Poppins',sans-serif", letterSpacing:-0.5 }}>Rp 213.500</div>
+                </div>
+                <button style={{ display:"flex", alignItems:"center", gap:4, background:"rgba(255,255,255,0.15)", border:"1px solid rgba(255,255,255,0.25)", borderRadius:20, padding:"7px 14px", cursor:"pointer", color:C.white, fontSize:13, fontWeight:600, fontFamily:"'Poppins',sans-serif" }}>
+                  <Icon name="arrow-right" size={14} color={C.white} /> Laporan
+                </button>
+              </div>
+              <div style={{ height:1, background:"rgba(255,255,255,0.18)", marginBottom:14 }}/>
+              <div style={{ display:"flex", justifyContent:"space-between" }}>
+                <div style={{ display:"flex", alignItems:"center", gap:5 }}>
+                  <Icon name="trending-up" size={14} color={C.accent} />
+                  <span style={{ fontSize:13, color:C.accent, fontFamily:"'Poppins',sans-serif", fontWeight:500 }}>+12% dari kemarin</span>
+                </div>
+                <div style={{ display:"flex", alignItems:"center", gap:5 }}>
+                  <Icon name="clock" size={13} color="rgba(255,255,255,0.55)" />
+                  <span style={{ fontSize:13, color:"rgba(255,255,255,0.55)", fontFamily:"'Poppins',sans-serif" }}>Update: 10:45</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Stats stacked */}
+            <div style={{ flex:1, display:"flex", flexDirection:"column", gap:12 }}>
+              {[
+                { icon:"cart",    label:"Transaksi",  val:"3",   sub:"Sukses hari ini", color:C.accent,  bg:C.accentLight  },
+                { icon:"package", label:"Produk",      val:"128", sub:"Item aktif",      color:C.primary, bg:C.primaryLight },
+                { icon:"alert",   label:"Stok Tipis",  val:"5",   sub:"Hampir habis",    color:C.warning, bg:C.warningLight },
+              ].map((s,i) => (
+                <div key={i} style={{ background:s.bg, borderRadius:16, padding:"14px 16px", display:"flex", alignItems:"center", gap:14, boxShadow:"0 2px 10px rgba(26,92,255,0.06)" }}>
+                  <div style={{ width:40, height:40, borderRadius:12, background:s.color+"22", display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0 }}>
+                    <Icon name={s.icon} size={20} color={s.color} />
+                  </div>
+                  <div>
+                    <div style={{ fontSize:10, color:s.color, fontWeight:600, fontFamily:"'Poppins',sans-serif", textTransform:"uppercase", letterSpacing:0.5 }}>{s.label}</div>
+                    <div style={{ fontSize:22, fontWeight:700, color:C.textPrimary, fontFamily:"'Poppins',sans-serif", lineHeight:1.2 }}>{s.val}</div>
+                    <div style={{ fontSize:11, color:C.textSecondary, fontFamily:"'Poppins',sans-serif" }}>{s.sub}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ) : (
+          <>
+            {/* Phone: Hero full width */}
+            <div style={{
+              background:`linear-gradient(135deg, ${C.primary} 0%, ${C.primaryDeep} 100%)`,
+              borderRadius:24, padding:20, marginBottom:14, position:"relative", overflow:"hidden",
+              boxShadow:`0 10px 32px rgba(26,92,255,0.36)`,
+              opacity: vis ? 1 : 0, transform: vis ? "none" : "translateY(14px)",
+              transition: "all 0.45s ease 0.05s",
+            }}>
+              <div style={{ position:"absolute", width:170, height:170, borderRadius:85, background:"rgba(255,255,255,0.07)", top:-65, right:-40 }}/>
+              <div style={{ position:"absolute", width:100, height:100, borderRadius:50, background:"rgba(255,255,255,0.05)", bottom:-35, left:15 }}/>
+              <div style={{ display:"flex", justifyContent:"space-between", alignItems:"flex-start", marginBottom:14 }}>
+                <div>
+                  <div style={{ fontSize:11, color:"rgba(255,255,255,0.7)", fontFamily:"'Poppins',sans-serif", letterSpacing:1, textTransform:"uppercase", marginBottom:4 }}>Pendapatan Hari Ini</div>
+                  <div style={{ fontSize:28, fontWeight:700, color:C.white, fontFamily:"'Poppins',sans-serif", letterSpacing:-0.5 }}>Rp 213.500</div>
+                </div>
+                <button style={{ display:"flex", alignItems:"center", gap:4, background:"rgba(255,255,255,0.15)", border:"1px solid rgba(255,255,255,0.25)", borderRadius:20, padding:"6px 12px", cursor:"pointer", color:C.white, fontSize:12, fontWeight:600, fontFamily:"'Poppins',sans-serif" }}>
+                  <Icon name="arrow-right" size={14} color={C.white} /> Laporan
+                </button>
+              </div>
+              <div style={{ height:1, background:"rgba(255,255,255,0.18)", marginBottom:12 }}/>
+              <div style={{ display:"flex", justifyContent:"space-between" }}>
+                <div style={{ display:"flex", alignItems:"center", gap:4 }}>
+                  <Icon name="trending-up" size={13} color={C.accent} />
+                  <span style={{ fontSize:12, color:C.accent, fontFamily:"'Poppins',sans-serif", fontWeight:500 }}>+12% dari kemarin</span>
+                </div>
+                <div style={{ display:"flex", alignItems:"center", gap:4 }}>
+                  <Icon name="clock" size={12} color="rgba(255,255,255,0.55)" />
+                  <span style={{ fontSize:12, color:"rgba(255,255,255,0.55)", fontFamily:"'Poppins',sans-serif" }}>10:45</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Phone: Stat cards row */}
+            <div style={{ display:"flex", gap:10, marginBottom:20,
+              opacity: vis ? 1 : 0, transform: vis ? "none" : "translateY(12px)",
+              transition: "all 0.42s ease 0.12s",
+            }}>
+              {[
+                { icon:"cart",    label:"Transaksi", val:"3",   sub:"Sukses",      color:C.accent,  bg:C.accentLight  },
+                { icon:"package", label:"Produk",     val:"128", sub:"Item aktif",  color:C.primary, bg:C.primaryLight },
+                { icon:"alert",   label:"Stok",       val:"5",   sub:"Hampir habis",color:C.warning, bg:C.warningLight },
+              ].map((s,i) => (
+                <div key={i} style={{ flex:1, background:s.bg, borderRadius:16, padding:13, boxShadow:"0 2px 10px rgba(26,92,255,0.06)" }}>
+                  <div style={{ width:33, height:33, borderRadius:10, background:s.color+"22", display:"flex", alignItems:"center", justifyContent:"center", marginBottom:7 }}>
+                    <Icon name={s.icon} size={17} color={s.color} />
+                  </div>
+                  <div style={{ fontSize:9, color:s.color, fontWeight:600, fontFamily:"'Poppins',sans-serif", textTransform:"uppercase", letterSpacing:0.4 }}>{s.label}</div>
+                  <div style={{ fontSize:20, fontWeight:700, color:C.textPrimary, fontFamily:"'Poppins',sans-serif" }}>{s.val}</div>
+                  <div style={{ fontSize:9, color:C.textSecondary, fontFamily:"'Poppins',sans-serif" }}>{s.sub}</div>
+                </div>
+              ))}
+            </div>
+          </>
+        )}
+
+        {/* Menu Section */}
+        <div style={{ fontSize: isTablet ? 17 : 16, fontWeight:700, color:C.textPrimary, fontFamily:"'Poppins',sans-serif", marginBottom:12,
+          opacity: vis ? 1 : 0, transition: "opacity 0.4s ease 0.18s",
+        }}>Menu Utama</div>
+
+        {/* Tablet: menu grid 2 columns */}
+        {isTablet ? (
+          <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:14, marginBottom:24,
+            opacity: vis ? 1 : 0, transform: vis ? "none" : "translateY(10px)",
+            transition: "all 0.4s ease 0.22s",
+          }}>
+            {/* POS spans full width */}
+            <button onClick={() => onNavigate("pos")} style={{
+              gridColumn:"1 / -1",
+              background:`linear-gradient(135deg, ${C.primary}, ${C.primaryDeep})`,
+              borderRadius:20, padding:"20px 24px", border:"none", cursor:"pointer",
+              display:"flex", alignItems:"center", justifyContent:"space-between",
+              boxShadow:`0 8px 24px rgba(26,92,255,0.32)`, position:"relative", overflow:"hidden",
+              transition:"transform 0.15s",
+            }}
+              onMouseEnter={e => e.currentTarget.style.transform = "scale(0.99)"}
+              onMouseLeave={e => e.currentTarget.style.transform = "scale(1)"}
+            >
+              <div style={{ position:"absolute", width:150, height:150, borderRadius:75, background:"rgba(255,255,255,0.08)", top:-50, left:-30 }}/>
+              <div style={{ textAlign:"left" }}>
+                <div style={{ fontSize:20, fontWeight:700, color:C.white, fontFamily:"'Poppins',sans-serif", marginBottom:3 }}>Buka Kasir (POS)</div>
+                <div style={{ fontSize:14, color:"rgba(255,255,255,0.75)", fontFamily:"'Poppins',sans-serif" }}>Mulai transaksi penjualan baru</div>
+              </div>
+              <div style={{ width:58, height:58, borderRadius:18, background:C.white, display:"flex", alignItems:"center", justifyContent:"center" }}>
+                <Icon name="pos" size={28} color={C.primary} />
+              </div>
+            </button>
+
+            {menuItems.map((m,i) => (
+              <button key={i} style={{
+                background:C.card, borderRadius:18, padding:"18px 20px",
+                border:`1px solid ${C.border}`, cursor:"pointer",
+                display:"flex", alignItems:"center", gap:16,
+                boxShadow:"0 2px 10px rgba(26,92,255,0.06)", transition:"transform 0.15s",
+              }}
+                onMouseEnter={e => e.currentTarget.style.transform = "scale(0.98)"}
+                onMouseLeave={e => e.currentTarget.style.transform = "scale(1)"}
+              >
+                <div style={{ width:50, height:50, borderRadius:15, background:m.bg, display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0 }}>
+                  <Icon name={m.icon} size={24} color={m.color} />
+                </div>
+                <div style={{ flex:1, textAlign:"left" }}>
+                  <div style={{ fontSize:15, fontWeight:600, color:C.textPrimary, fontFamily:"'Poppins',sans-serif" }}>{m.title}</div>
+                  <div style={{ fontSize:12, color:C.textSecondary, fontFamily:"'Poppins',sans-serif", marginTop:2 }}>{m.sub}</div>
+                </div>
+                <Icon name="chevron-right" size={18} color={C.textMuted} />
+              </button>
+            ))}
+          </div>
+        ) : (
+          <>
+            <button onClick={() => onNavigate("pos")} style={{
+              background:`linear-gradient(135deg, ${C.primary}, ${C.primaryDeep})`,
+              borderRadius:20, padding:"18px 20px", border:"none", cursor:"pointer",
+              display:"flex", alignItems:"center", justifyContent:"space-between",
+              width:"100%", marginBottom:10, position:"relative", overflow:"hidden",
+              boxShadow:`0 8px 24px rgba(26,92,255,0.30)`, transition:"transform 0.15s",
+              opacity: vis ? 1 : 0, transform: vis ? "scale(1)" : "translateY(10px) scale(1)",
+              transition: "all 0.4s ease 0.22s",
+            }}
+              onMouseEnter={e => e.currentTarget.style.transform = "scale(0.98)"}
+              onMouseLeave={e => e.currentTarget.style.transform = "scale(1)"}
+            >
+              <div style={{ position:"absolute", width:120, height:120, borderRadius:60, background:"rgba(255,255,255,0.08)", top:-40, left:-20 }}/>
+              <div style={{ textAlign:"left" }}>
+                <div style={{ fontSize:18, fontWeight:700, color:C.white, fontFamily:"'Poppins',sans-serif", marginBottom:2 }}>Buka Kasir (POS)</div>
+                <div style={{ fontSize:13, color:"rgba(255,255,255,0.75)", fontFamily:"'Poppins',sans-serif" }}>Mulai transaksi penjualan</div>
+              </div>
+              <div style={{ width:52, height:52, borderRadius:16, background:C.white, display:"flex", alignItems:"center", justifyContent:"center" }}>
+                <Icon name="pos" size={26} color={C.primary} />
+              </div>
+            </button>
+            {menuItems.map((m,i) => (
+              <button key={i} style={{
+                background:C.card, borderRadius:16, padding:"14px 16px",
+                border:`1px solid ${C.border}`, cursor:"pointer",
+                display:"flex", alignItems:"center", gap:14, width:"100%", marginBottom:10,
+                boxShadow:"0 2px 8px rgba(26,92,255,0.05)", transition:"transform 0.15s",
+                opacity: vis ? 1 : 0, transform: vis ? "none" : "translateY(8px)",
+                transition: `all 0.38s ease ${0.28 + i * 0.06}s`,
+              }}
+                onMouseEnter={e => e.currentTarget.style.transform = "scale(0.98)"}
+                onMouseLeave={e => e.currentTarget.style.transform = "scale(1)"}
+              >
+                <div style={{ width:46, height:46, borderRadius:14, background:m.bg, display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0 }}>
+                  <Icon name={m.icon} size={22} color={m.color} />
+                </div>
+                <div style={{ flex:1, textAlign:"left" }}>
+                  <div style={{ fontSize:15, fontWeight:600, color:C.textPrimary, fontFamily:"'Poppins',sans-serif" }}>{m.title}</div>
+                  <div style={{ fontSize:12, color:C.textSecondary, fontFamily:"'Poppins',sans-serif", marginTop:1 }}>{m.sub}</div>
+                </div>
+                <div style={{ width:30, height:30, borderRadius:8, background:C.bg, display:"flex", alignItems:"center", justifyContent:"center" }}>
+                  <Icon name="chevron-right" size={18} color={C.textMuted} />
+                </div>
+              </button>
+            ))}
+          </>
+        )}
+
+        {/* Activity */}
+        <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center", marginBottom:12, opacity: vis ? 1 : 0, transition:"opacity 0.4s ease 0.5s" }}>
+          <div style={{ fontSize: isTablet ? 17 : 16, fontWeight:700, color:C.textPrimary, fontFamily:"'Poppins',sans-serif" }}>Aktivitas Terakhir</div>
+          <button style={{ background:"none", border:"none", cursor:"pointer", fontSize:13, fontWeight:600, color:C.primary, fontFamily:"'Poppins',sans-serif" }}>Lihat Semua</button>
+        </div>
+
+        <div style={{
+          background:C.card, borderRadius:16, border:`1px solid ${C.border}`,
+          boxShadow:"0 2px 10px rgba(26,92,255,0.06)", overflow:"hidden",
+          opacity: vis ? 1 : 0, transition:"opacity 0.4s ease 0.56s",
+          display: isTablet ? "grid" : "block",
+          gridTemplateColumns: isTablet ? "1fr 1fr" : undefined,
+        }}>
+          {ACTIVITY.map((a,i) => {
+            const isIncome = a.type === "income";
+            const col = isIncome ? C.accent : C.danger;
+            return (
+              <div key={a.id} style={{ display:"flex", alignItems:"center", padding: isTablet ? "14px 20px" : "12px 16px", gap:12,
+                borderRight: isTablet && i % 2 === 0 ? `1px solid ${C.border}` : undefined,
+                borderBottom: isTablet ? (i < ACTIVITY.length - 2 ? `1px solid ${C.border}` : undefined) : (i < ACTIVITY.length - 1 ? `1px solid ${C.border}` : undefined),
+              }}>
+                <div style={{ width:38, height:38, borderRadius:12, background:col+"18", display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0 }}>
+                  <Icon name={a.icon} size={18} color={col} />
+                </div>
+                <div style={{ flex:1 }}>
+                  <div style={{ fontSize:13, fontWeight:600, color:C.textPrimary, fontFamily:"'Poppins',sans-serif" }}>{a.title}</div>
+                  <div style={{ fontSize:11, color:C.textSecondary, fontFamily:"'Poppins',sans-serif", marginTop:1 }}>{a.time}</div>
+                </div>
+                <div style={{ fontSize:13, fontWeight:700, color:col, fontFamily:"'Poppins',sans-serif" }}>
+                  {isIncome ? "+" : "-"}Rp {a.amount}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// ─── POS CONTENT ──────────────────────────────────────────────────────────────
+const POSContent = ({ isTablet, onBack }) => {
+  const [search, setSearch] = useState("");
+  const [cat, setCat] = useState("Semua");
+  const [cart, setCart] = useState([]);
+  const [showCart, setShowCart] = useState(false);
+
+  const filtered = PRODUCTS.filter(p =>
+    (cat === "Semua" || p.cat === cat) &&
+    p.name.toLowerCase().includes(search.toLowerCase())
+  );
+
+  const cartTotal = cart.reduce((s,i) => s + i.price * i.qty, 0);
+  const cartCount = cart.reduce((s,i) => s + i.qty, 0);
+  const getQty = id => (cart.find(i => i.id === id)?.qty || 0);
+  const addItem = (p) => setCart(prev => {
+    const ex = prev.find(i => i.id === p.id);
+    return ex ? prev.map(i => i.id === p.id ? {...i, qty: i.qty+1} : i) : [...prev, {...p, qty:1}];
+  });
+  const incQty = (item) => setCart(prev => prev.map(i => i.id === item.id ? {...i, qty: i.qty+1} : i));
+  const decQty = (item) => setCart(prev => prev.map(i => i.id === item.id ? {...i, qty: i.qty-1} : i).filter(i => i.qty > 0));
+
+  const cols = isTablet ? 3 : 2;
+
+  // Tablet: split layout — product grid left, cart panel right
+  if (isTablet) {
+    return (
+      <div style={{ display:"flex", flex:1, overflow:"hidden" }}>
+        {/* Left: Products */}
+        <div style={{ flex:1, display:"flex", flexDirection:"column", overflow:"hidden" }}>
+          {/* Header */}
+          <div style={{ display:"flex", alignItems:"center", gap:14, padding:"20px 24px 14px" }}>
+            <button onClick={onBack} style={{ width:40, height:40, borderRadius:12, background:C.card, border:`1px solid ${C.border}`, cursor:"pointer", display:"flex", alignItems:"center", justifyContent:"center" }}>
+              <Icon name="arrow-left" size={20} color={C.textPrimary} />
+            </button>
+            <div>
+              <div style={{ fontSize:17, fontWeight:700, color:C.textPrimary, fontFamily:"'Poppins',sans-serif" }}>Kasir (POS)</div>
+              <div style={{ fontSize:12, color:C.textSecondary, fontFamily:"'Poppins',sans-serif" }}>Pilih produk untuk ditambahkan</div>
+            </div>
+          </div>
+
+          {/* Search + Category */}
+          <div style={{ padding:"0 24px 14px" }}>
+            <div style={{ display:"flex", alignItems:"center", gap:8, background:C.card, borderRadius:14, padding:"10px 14px", border:`1px solid ${C.border}`, boxShadow:"0 2px 8px rgba(26,92,255,0.06)", marginBottom:12 }}>
+              <Icon name="search" size={19} color={C.textMuted} />
+              <input value={search} onChange={e => setSearch(e.target.value)} placeholder="Cari produk..." style={{ flex:1, border:"none", outline:"none", background:"transparent", fontSize:14, color:C.textPrimary, fontFamily:"'Poppins',sans-serif" }}/>
+              {search && <button onClick={() => setSearch("")} style={{ background:"none", border:"none", cursor:"pointer", padding:0 }}><Icon name="close" size={17} color={C.textMuted} /></button>}
+            </div>
+            <div style={{ display:"flex", gap:8 }}>
+              {CATS.map(c => (
+                <button key={c} onClick={() => setCat(c)} style={{
+                  padding:"6px 16px", borderRadius:20, border:`1px solid ${cat===c ? C.primary : C.border}`,
+                  background: cat===c ? C.primary : C.card, cursor:"pointer",
+                  fontSize:13, fontWeight: cat===c ? 600 : 400,
+                  color: cat===c ? C.white : C.textSecondary, fontFamily:"'Poppins',sans-serif", transition:"all 0.18s",
+                }}>{c}</button>
+              ))}
+            </div>
+          </div>
+
+          {/* Product Grid 3-col */}
+          <div style={{ flex:1, overflowY:"auto", padding:"0 24px 24px" }}>
+            <div style={{ display:"grid", gridTemplateColumns:`repeat(${cols}, 1fr)`, gap:14 }}>
+              {filtered.map(p => {
+                const qty = getQty(p.id);
+                return (
+                  <button key={p.id} onClick={() => addItem(p)} style={{
+                    background:C.card, borderRadius:16, padding:16,
+                    border:`1.5px solid ${qty > 0 ? C.primary : C.border}`,
+                    cursor:"pointer", textAlign:"left", position:"relative",
+                    boxShadow: qty > 0 ? `0 4px 16px rgba(26,92,255,0.16)` : "0 2px 8px rgba(26,92,255,0.06)",
+                    transition:"all 0.18s",
+                  }}
+                    onMouseEnter={e => e.currentTarget.style.transform = "scale(0.97)"}
+                    onMouseLeave={e => e.currentTarget.style.transform = "scale(1)"}
+                  >
+                    {qty > 0 && (
+                      <div style={{ position:"absolute", top:10, right:10, width:22, height:22, borderRadius:11, background:C.primary, display:"flex", alignItems:"center", justifyContent:"center" }}>
+                        <span style={{ fontSize:11, fontWeight:700, color:C.white, fontFamily:"'Poppins',sans-serif" }}>{qty}</span>
+                      </div>
+                    )}
+                    <div style={{ width:52, height:52, borderRadius:15, background:C.primaryLight, display:"flex", alignItems:"center", justifyContent:"center", marginBottom:12 }}>
+                      <Icon name="food" size={26} color={C.primary} />
+                    </div>
+                    <div style={{ fontSize:14, fontWeight:600, color:C.textPrimary, fontFamily:"'Poppins',sans-serif", marginBottom:4, lineHeight:1.3 }}>{p.name}</div>
+                    <div style={{ fontSize:14, fontWeight:700, color:C.primary, fontFamily:"'Poppins',sans-serif", marginBottom:10 }}>{fmt(p.price)}</div>
+                    <div style={{ display:"flex", justifyContent:"flex-end" }}>
+                      <div style={{ width:28, height:28, borderRadius:9, background:C.primary, display:"flex", alignItems:"center", justifyContent:"center" }}>
+                        <Icon name="plus" size={14} color={C.white} />
+                      </div>
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+
+        {/* Right: Cart Panel (always visible on tablet) */}
+        <div style={{ width:280, background:C.card, borderLeft:`1px solid ${C.border}`, display:"flex", flexDirection:"column" }}>
+          <div style={{ padding:"20px 20px 14px", borderBottom:`1px solid ${C.border}` }}>
+            <div style={{ fontSize:16, fontWeight:700, color:C.textPrimary, fontFamily:"'Poppins',sans-serif", marginBottom:2 }}>Pesanan</div>
+            <div style={{ fontSize:12, color:C.textSecondary, fontFamily:"'Poppins',sans-serif" }}>{cartCount} item dipilih</div>
+          </div>
+
+          <div style={{ flex:1, overflowY:"auto", padding:"8px 0" }}>
+            {cart.length === 0 ? (
+              <div style={{ display:"flex", flexDirection:"column", alignItems:"center", paddingTop:50, gap:10 }}>
+                <Icon name="cart" size={40} color={C.textMuted} />
+                <span style={{ fontSize:13, color:C.textMuted, fontFamily:"'Poppins',sans-serif" }}>Keranjang kosong</span>
+              </div>
+            ) : cart.map((item,i) => (
+              <div key={item.id}>
+                {i > 0 && <div style={{ height:1, background:C.border, margin:"0 20px" }}/>}
+                <div style={{ display:"flex", alignItems:"center", padding:"12px 20px", gap:10 }}>
+                  <div style={{ flex:1 }}>
+                    <div style={{ fontSize:13, fontWeight:600, color:C.textPrimary, fontFamily:"'Poppins',sans-serif" }}>{item.name}</div>
+                    <div style={{ fontSize:12, color:C.textSecondary, fontFamily:"'Poppins',sans-serif", marginTop:1 }}>{fmt(item.price)}</div>
+                  </div>
+                  <div style={{ display:"flex", alignItems:"center", gap:8 }}>
+                    <button onClick={() => decQty(item)} style={{ width:28, height:28, borderRadius:8, background:C.primaryLight, border:`1px solid ${C.border}`, cursor:"pointer", display:"flex", alignItems:"center", justifyContent:"center" }}>
+                      <Icon name="minus" size={13} color={C.primary} />
+                    </button>
+                    <span style={{ fontSize:14, fontWeight:700, color:C.textPrimary, fontFamily:"'Poppins',sans-serif", minWidth:18, textAlign:"center" }}>{item.qty}</span>
+                    <button onClick={() => incQty(item)} style={{ width:28, height:28, borderRadius:8, background:C.primary, border:"none", cursor:"pointer", display:"flex", alignItems:"center", justifyContent:"center" }}>
+                      <Icon name="plus" size={13} color={C.white} />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div style={{ padding:20, borderTop:`1px solid ${C.border}` }}>
+            <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center", marginBottom:6 }}>
+              <span style={{ fontSize:13, color:C.textSecondary, fontFamily:"'Poppins',sans-serif" }}>Total</span>
+              <span style={{ fontSize:19, fontWeight:700, color:C.textPrimary, fontFamily:"'Poppins',sans-serif" }}>{fmt(cartTotal)}</span>
+            </div>
+            <div style={{ fontSize:11, color:C.textMuted, fontFamily:"'Poppins',sans-serif", marginBottom:14 }}>{cartCount} item · belum termasuk pajak</div>
+            <button style={{
+              width:"100%", background: cartCount > 0 ? `linear-gradient(135deg, ${C.primary}, ${C.primaryDeep})` : C.border,
+              borderRadius:14, padding:"14px 20px", border:"none", cursor: cartCount > 0 ? "pointer" : "default",
+              display:"flex", alignItems:"center", justifyContent:"center", gap:8,
+              boxShadow: cartCount > 0 ? `0 6px 18px rgba(26,92,255,0.32)` : "none",
+              transition:"all 0.2s",
+            }}>
+              <Icon name="cash-register" size={19} color={cartCount > 0 ? C.white : C.textMuted} />
+              <span style={{ fontSize:15, fontWeight:700, color: cartCount > 0 ? C.white : C.textMuted, fontFamily:"'Poppins',sans-serif" }}>Bayar Sekarang</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Phone POS (same as before)
+  return (
+    <div style={{ flex:1, display:"flex", flexDirection:"column", background:C.bg, overflow:"hidden", position:"relative" }}>
+      <div style={{ display:"flex", alignItems:"center", gap:12, padding:"20px 20px 14px" }}>
+        <button onClick={onBack} style={{ width:40, height:40, borderRadius:12, background:C.card, border:`1px solid ${C.border}`, cursor:"pointer", display:"flex", alignItems:"center", justifyContent:"center" }}>
+          <Icon name="arrow-left" size={20} color={C.textPrimary} />
+        </button>
+        <div style={{ flex:1 }}>
+          <div style={{ fontSize:16, fontWeight:700, color:C.textPrimary, fontFamily:"'Poppins',sans-serif" }}>Kasir (POS)</div>
+          <div style={{ fontSize:12, color:C.textSecondary, fontFamily:"'Poppins',sans-serif" }}>Pilih produk</div>
+        </div>
+        <button onClick={() => setShowCart(true)} style={{ width:44, height:44, borderRadius:14, background:C.primaryLight, border:"none", cursor:"pointer", display:"flex", alignItems:"center", justifyContent:"center", position:"relative" }}>
+          <Icon name="cart" size={22} color={C.primary} />
+          {cartCount > 0 && <div style={{ position:"absolute", top:7, right:7, width:16, height:16, borderRadius:8, background:C.danger, display:"flex", alignItems:"center", justifyContent:"center" }}><span style={{ fontSize:9, fontWeight:700, color:C.white, fontFamily:"'Poppins',sans-serif" }}>{cartCount}</span></div>}
+        </button>
+      </div>
+      <div style={{ display:"flex", alignItems:"center", gap:8, background:C.card, margin:"0 20px 14px", borderRadius:14, padding:"10px 14px", border:`1px solid ${C.border}` }}>
+        <Icon name="search" size={19} color={C.textMuted} />
+        <input value={search} onChange={e => setSearch(e.target.value)} placeholder="Cari produk..." style={{ flex:1, border:"none", outline:"none", background:"transparent", fontSize:14, color:C.textPrimary, fontFamily:"'Poppins',sans-serif" }}/>
+      </div>
+      <div style={{ display:"flex", gap:8, padding:"0 20px 16px", overflowX:"auto" }}>
+        {CATS.map(c => <button key={c} onClick={() => setCat(c)} style={{ padding:"6px 16px", borderRadius:20, border:`1px solid ${cat===c ? C.primary : C.border}`, background: cat===c ? C.primary : C.card, cursor:"pointer", whiteSpace:"nowrap", fontSize:13, fontWeight: cat===c ? 600 : 400, color: cat===c ? C.white : C.textSecondary, fontFamily:"'Poppins',sans-serif" }}>{c}</button>)}
+      </div>
+      <div style={{ flex:1, overflowY:"auto", padding:"0 20px", paddingBottom: cartCount > 0 ? 90 : 20 }}>
+        <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:12 }}>
+          {filtered.map(p => {
+            const qty = getQty(p.id);
+            return (
+              <button key={p.id} onClick={() => addItem(p)} style={{ background:C.card, borderRadius:16, padding:14, border:`1.5px solid ${qty > 0 ? C.primary : C.border}`, cursor:"pointer", textAlign:"left", position:"relative", boxShadow: qty>0 ? `0 4px 14px rgba(26,92,255,0.15)` : "0 2px 8px rgba(26,92,255,0.05)", transition:"all 0.18s" }}
+                onMouseEnter={e => e.currentTarget.style.transform="scale(0.97)"}
+                onMouseLeave={e => e.currentTarget.style.transform="scale(1)"}
+              >
+                {qty > 0 && <div style={{ position:"absolute", top:8, right:8, width:22, height:22, borderRadius:11, background:C.primary, display:"flex", alignItems:"center", justifyContent:"center" }}><span style={{ fontSize:11, fontWeight:700, color:C.white, fontFamily:"'Poppins',sans-serif" }}>{qty}</span></div>}
+                <div style={{ width:48, height:48, borderRadius:14, background:C.primaryLight, display:"flex", alignItems:"center", justifyContent:"center", marginBottom:10 }}><Icon name="food" size={24} color={C.primary} /></div>
+                <div style={{ fontSize:13, fontWeight:600, color:C.textPrimary, fontFamily:"'Poppins',sans-serif", marginBottom:4, lineHeight:1.3 }}>{p.name}</div>
+                <div style={{ fontSize:14, fontWeight:700, color:C.primary, fontFamily:"'Poppins',sans-serif", marginBottom:8 }}>{fmt(p.price)}</div>
+                <div style={{ display:"flex", justifyContent:"flex-end" }}>
+                  <div style={{ width:26, height:26, borderRadius:8, background:C.primary, display:"flex", alignItems:"center", justifyContent:"center" }}><Icon name="plus" size={14} color={C.white} /></div>
+                </div>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+      {cartCount > 0 && !showCart && (
+        <div style={{ position:"absolute", bottom:16, left:20, right:20 }}>
+          <button onClick={() => setShowCart(true)} style={{ width:"100%", background:`linear-gradient(135deg, ${C.primary}, ${C.primaryDeep})`, borderRadius:18, padding:"14px 20px", border:"none", cursor:"pointer", display:"flex", alignItems:"center", justifyContent:"space-between", boxShadow:`0 8px 24px rgba(26,92,255,0.36)` }}>
+            <div style={{ display:"flex", alignItems:"center", gap:10 }}>
+              <div style={{ width:28, height:28, borderRadius:14, background:"rgba(255,255,255,0.2)", display:"flex", alignItems:"center", justifyContent:"center", border:"1px solid rgba(255,255,255,0.3)" }}><span style={{ fontSize:13, fontWeight:700, color:C.white, fontFamily:"'Poppins',sans-serif" }}>{cartCount}</span></div>
+              <span style={{ fontSize:14, fontWeight:600, color:C.white, fontFamily:"'Poppins',sans-serif" }}>Lihat Pesanan</span>
+            </div>
+            <span style={{ fontSize:15, fontWeight:700, color:C.white, fontFamily:"'Poppins',sans-serif" }}>{fmt(cartTotal)}</span>
+          </button>
+        </div>
+      )}
+      {showCart && (
+        <>
+          <div onClick={() => setShowCart(false)} style={{ position:"absolute", inset:0, background:"rgba(13,27,75,0.4)", zIndex:10 }}/>
+          <div style={{ position:"absolute", left:0, right:0, bottom:0, background:C.card, borderRadius:"28px 28px 0 0", zIndex:11, maxHeight:"75%", display:"flex", flexDirection:"column", animation:"slideUp 0.3s ease" }}>
+            <div style={{ width:40, height:4, borderRadius:2, background:C.border, margin:"12px auto 0" }}/>
+            <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center", padding:"14px 20px 10px" }}>
+              <span style={{ fontSize:17, fontWeight:700, color:C.textPrimary, fontFamily:"'Poppins',sans-serif" }}>Pesanan ({cartCount})</span>
+              <button onClick={() => setShowCart(false)} style={{ background:"none", border:"none", cursor:"pointer", padding:4 }}><Icon name="close" size={22} color={C.textPrimary} /></button>
+            </div>
+            <div style={{ flex:1, overflowY:"auto" }}>
+              {cart.map((item,i) => (
+                <div key={item.id}>
+                  {i > 0 && <div style={{ height:1, background:C.border, margin:"0 20px" }}/>}
+                  <div style={{ display:"flex", alignItems:"center", padding:"12px 20px", gap:12 }}>
+                    <div style={{ flex:1 }}>
+                      <div style={{ fontSize:14, fontWeight:600, color:C.textPrimary, fontFamily:"'Poppins',sans-serif" }}>{item.name}</div>
+                      <div style={{ fontSize:13, color:C.textSecondary, fontFamily:"'Poppins',sans-serif", marginTop:2 }}>{fmt(item.price)}</div>
+                    </div>
+                    <div style={{ display:"flex", alignItems:"center", gap:10 }}>
+                      <button onClick={() => decQty(item)} style={{ width:30, height:30, borderRadius:9, background:C.primaryLight, border:`1px solid ${C.border}`, cursor:"pointer", display:"flex", alignItems:"center", justifyContent:"center" }}><Icon name="minus" size={14} color={C.primary} /></button>
+                      <span style={{ fontSize:15, fontWeight:700, color:C.textPrimary, fontFamily:"'Poppins',sans-serif", minWidth:20, textAlign:"center" }}>{item.qty}</span>
+                      <button onClick={() => incQty(item)} style={{ width:30, height:30, borderRadius:9, background:C.primary, border:"none", cursor:"pointer", display:"flex", alignItems:"center", justifyContent:"center" }}><Icon name="plus" size={14} color={C.white} /></button>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div style={{ padding:20, borderTop:`1px solid ${C.border}` }}>
+              <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center", marginBottom:14 }}>
+                <span style={{ fontSize:14, color:C.textSecondary, fontFamily:"'Poppins',sans-serif" }}>Total Pembayaran</span>
+                <span style={{ fontSize:20, fontWeight:700, color:C.textPrimary, fontFamily:"'Poppins',sans-serif" }}>{fmt(cartTotal)}</span>
+              </div>
+              <button style={{ width:"100%", background:`linear-gradient(135deg, ${C.primary}, ${C.primaryDeep})`, borderRadius:16, padding:"15px 20px", border:"none", cursor:"pointer", display:"flex", alignItems:"center", justifyContent:"center", gap:8, boxShadow:`0 8px 20px rgba(26,92,255,0.33)` }}>
+                <Icon name="cash-register" size={20} color={C.white} />
+                <span style={{ fontSize:16, fontWeight:700, color:C.white, fontFamily:"'Poppins',sans-serif" }}>Bayar Sekarang</span>
+              </button>
+            </div>
+          </div>
+        </>
+      )}
+    </div>
+  );
+};
+
+// ─── APP ROOT ─────────────────────────────────────────────────────────────────
+export default function App() {
+  const [mode, setMode] = useState("phone"); // "phone" | "tablet"
+  const [screen, setScreen] = useState("dashboard");
+  const [activeTab, setActiveTab] = useState("home");
+
+  const isTablet = mode === "tablet";
+
+  // Dimensions for the device shell
+  const shell = isTablet
+    ? { width: 900, height: 640, radius: 20 }
+    : { width: 390, height: 780, radius: 44 };
+
+  return (
+    <>
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background: #0f1729; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; gap: 24px; padding: 24px; }
+        @keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
+        ::-webkit-scrollbar { width: 0; height: 0; }
+        input::placeholder { color: #A0ADCC; }
+      `}</style>
+
+      {/* Toggle */}
+      <div style={{ display:"flex", alignItems:"center", gap:8, background:"rgba(255,255,255,0.07)", borderRadius:40, padding:"6px 8px", border:"1px solid rgba(255,255,255,0.12)" }}>
+        {[
+          { key:"phone",  icon:"phone",  label:"Phone"  },
+          { key:"tablet", icon:"tablet", label:"Tablet" },
+        ].map(m => (
+          <button key={m.key} onClick={() => { setMode(m.key); setScreen("dashboard"); }} style={{
+            display:"flex", alignItems:"center", gap:7, padding:"8px 18px", borderRadius:30, border:"none", cursor:"pointer",
+            background: mode === m.key ? C.primary : "transparent",
+            transition:"all 0.22s",
+          }}>
+            <Icon name={m.icon} size={16} color={mode === m.key ? C.white : C.textMuted} />
+            <span style={{ fontSize:13, fontWeight:600, color: mode === m.key ? C.white : C.textMuted, fontFamily:"'Poppins',sans-serif" }}>{m.label}</span>
+          </button>
+        ))}
+      </div>
+
+      {/* Device Shell */}
+      <div style={{
+        width: shell.width, height: shell.height,
+        background: C.bg,
+        borderRadius: shell.radius,
+        overflow: "hidden",
+        display: "flex",
+        flexDirection: "column",
+        boxShadow: "0 32px 80px rgba(0,0,0,0.65), 0 0 0 1px rgba(255,255,255,0.07)",
+        transition: "all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)",
+        position: "relative",
+      }}>
+        {/* Status Bar */}
+        <div style={{ background: C.bg, padding: isTablet ? "10px 24px 6px" : "14px 24px 6px", display:"flex", justifyContent:"space-between", alignItems:"center", flexShrink:0 }}>
+          <span style={{ fontSize:13, fontWeight:600, color:C.textPrimary, fontFamily:"'Poppins',sans-serif" }}>9:41</span>
+          <div style={{ display:"flex", gap:6, alignItems:"center" }}>
+            <span style={{ fontSize:12, fontWeight:600, color:C.textPrimary, fontFamily:"'Poppins',sans-serif" }}>85%</span>
+          </div>
+        </div>
+
+        {/* Main layout */}
+        <div style={{ flex:1, display:"flex", overflow:"hidden" }}>
+          {/* Tablet side nav (always visible) */}
+          {isTablet && screen === "dashboard" && (
+            <SideNav active={activeTab} onChange={setActiveTab} />
+          )}
+
+          {/* Screen content */}
+          <div style={{ flex:1, display:"flex", flexDirection:"column", overflow:"hidden" }}>
+            {screen === "dashboard" ? (
+              <DashboardContent isTablet={isTablet} onNavigate={s => setScreen(s)} />
+            ) : (
+              <POSContent isTablet={isTablet} onBack={() => setScreen("dashboard")} />
+            )}
+          </div>
+        </div>
+
+        {/* Bottom tab only for phone dashboard */}
+        {!isTablet && screen === "dashboard" && (
+          <BottomTab active={activeTab} onChange={setActiveTab} />
+        )}
+
+        {/* Home indicator */}
+        {!isTablet && (
+          <div style={{ display:"flex", justifyContent:"center", paddingBottom:8, paddingTop:4, background:C.card, flexShrink:0 }}>
+            <div style={{ width:120, height:4, borderRadius:2, background:C.border }}/>
+          </div>
+        )}
+      </div>
+
+      <div style={{ fontSize:12, color:"rgba(255,255,255,0.3)", fontFamily:"'Poppins',sans-serif" }}>
+        Toggle Phone / Tablet untuk melihat perbedaan layout
+      </div>
+    </>
+  );
+}

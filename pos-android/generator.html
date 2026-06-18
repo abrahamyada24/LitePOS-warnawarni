@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generator Kode Aktivasi - LitePOS</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        h2 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        .form-group {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #34495e;
+            font-size: 14px;
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccd1d9;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 16px;
+            font-family: monospace;
+        }
+        input:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+        }
+        button {
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            padding: 14px;
+            width: 100%;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #2471a3;
+        }
+        .result {
+            margin-top: 25px;
+            padding: 20px;
+            background-color: #e8f8f5;
+            border: 2px dashed #1abc9c;
+            border-radius: 8px;
+            display: none;
+        }
+        .result.show {
+            display: block;
+        }
+        .result-code {
+            font-size: 28px;
+            font-weight: 900;
+            color: #16a085;
+            letter-spacing: 2px;
+            margin: 10px 0;
+        }
+        .copy-btn {
+            background-color: #1abc9c;
+            padding: 8px 15px;
+            font-size: 12px;
+            margin-top: 10px;
+            width: auto;
+        }
+        .copy-btn:hover {
+            background-color: #16a085;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>🔑 Generator Kode Aktivasi</h2>
+    <p style="color: #7f8c8d; font-size: 14px; margin-bottom: 30px;">Gunakan tools offline ini untuk membuat kode buka gembok aplikasi pelanggan Anda.</p>
+
+    <div class="form-group">
+        <label>ID Mesin / Toko (Dari Pelanggan)</label>
+        <input type="text" id="storeId" placeholder="Misal: TK-1A2B3C" autocomplete="off" oninput="this.value = this.value.toUpperCase()">
+    </div>
+
+    <div class="form-group">
+        <label>Tambahan Hari (Masa Aktif)</label>
+        <input type="number" id="days" placeholder="Misal: 30" value="30">
+    </div>
+
+    <button onclick="generateCode()">Generate Kode</button>
+
+    <div class="result" id="resultBox">
+        <div style="font-size: 13px; color: #2c3e50; font-weight: bold;">KODE AKTIVASI:</div>
+        <div class="result-code" id="resultCode"></div>
+        <button class="copy-btn" onclick="copyToClipboard()">📋 Salin Kode</button>
+    </div>
+</div>
+
+<script>
+    function generateSignature(storeId, days) {
+        // Algoritma persis dengan yang ada di LockScreen.tsx
+        const str = storeId + days + "LITE_SECRET_2026";
+        let hash = 5381;
+        for (let i = 0; i < str.length; i++) {
+            hash = ((hash << 5) + hash) + str.charCodeAt(i);
+        }
+        // Pastikan format menjadi 4 karakter Hex uppercase
+        return Math.abs(hash).toString(16).toUpperCase().substring(0, 4).padStart(4, '0');
+    }
+
+    function generateCode() {
+        const storeId = document.getElementById('storeId').value.trim().toUpperCase();
+        const days = document.getElementById('days').value.trim();
+
+        if (!storeId || !days || isNaN(days) || parseInt(days) <= 0) {
+            alert("Harap masukkan ID Toko dan jumlah hari yang valid!");
+            return;
+        }
+
+        const signature = generateSignature(storeId, days);
+        const finalCode = signature; // Hanya signature saja, durasi hari disembunyikan
+
+        document.getElementById('resultCode').innerText = finalCode;
+        document.getElementById('resultBox').classList.add('show');
+    }
+
+    function copyToClipboard() {
+        const code = document.getElementById('resultCode').innerText;
+        navigator.clipboard.writeText(code).then(() => {
+            alert("Kode disalin ke clipboard!");
+        }).catch(err => {
+            console.error('Failed to copy', err);
+        });
+    }
+</script>
+
+</body>
+</html>

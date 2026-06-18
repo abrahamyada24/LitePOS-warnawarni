@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__ide__getDiagnostics",
+      "Bash(npx tsc *)",
+      "Bash(npx react-native *)",
+      "Bash(npm install *)",
+      "Bash(npx canvas-cli *)",
+      "Bash(npx canvas-create *)",
+      "Bash(node create_logo.js)",
+      "Bash(py create_logo.py)",
+      "Bash(python create_logo.py)",
+      "Bash(python3 create_logo.py)",
+      "Bash(pip3 install *)"
+    ]
+  }
+}

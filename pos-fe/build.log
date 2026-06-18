@@ -1,0 +1,36 @@
+
+> pos-dashboard@0.1.0 build
+> next build
+
+▲ Next.js 16.1.4 (Turbopack)
+- Environments: .env
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 5.9s
+  Running TypeScript ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/15) ...
+  Generating static pages using 7 workers (3/15) 
+  Generating static pages using 7 workers (7/15) 
+  Generating static pages using 7 workers (11/15) 
+✓ Generating static pages using 7 workers (15/15) in 927.5ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /categories
+├ ○ /customers
+├ ○ /login
+├ ○ /otp
+├ ○ /pos
+├ ○ /products
+├ ○ /reports
+├ ○ /settings
+├ ○ /stock
+├ ○ /transactions
+└ ○ /users
+
+
+○  (Static)  prerendered as static content
+

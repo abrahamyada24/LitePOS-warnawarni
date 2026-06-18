@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@layer theme {
+
+  :root,
+  :host {
+    --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+    /* User Custom Colors */
+    --color-red-50: oklch(.971 .013 17.38);
+    --color-red-300: oklch(.808 .114 19.571);
+    --color-red-400: oklch(.704 .191 22.216);
+    --color-red-500: oklch(.637 .237 25.331);
+
+    --color-blue-50: oklch(.97 .014 254.6);
+    --color-blue-300: oklch(.809 .105 251.8);
+    --color-blue-400: oklch(.707 .165 254.6);
+    --color-blue-500: oklch(.623 .214 259.8);
+    --color-blue-600: oklch(.546 .245 262.8);
+
+    --color-gray-50: oklch(.985 .002 264.542);
+    --color-gray-100: oklch(.967 .003 264.542);
+    --color-gray-200: oklch(.92 .005 264.542);
+    --color-gray-400: oklch(.707 .022 261.325);
+    --color-gray-500: oklch(.55 .022 261.325);
+    --color-gray-800: oklch(.30 .022 261.325);
+
+    --color-white: #fff;
+
+    /* Semantic Mappings */
+    --color-primary: var(--color-blue-500);
+    --color-primary-hover: var(--color-blue-600);
+    --color-bg-main: var(--color-gray-50);
+    --color-card: var(--color-white);
+
+    --spacing: .25rem;
+    --radius-2xl: 1rem;
+
+    /* Transitions */
+    --ease-in-out: cubic-bezier(.4, 0, .2, 1);
+    --default-transition-duration: .15s;
+  }
+}
+
+/* Custom Utilities for clean UI */
+@layer utilities {
+  .card-base {
+    background-color: var(--color-card);
+    border-radius: var(--radius-2xl);
+    border: 1px solid var(--color-gray-200);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  }
+}
+
+body {
+  background-color: var(--color-bg-main);
+  font-family: var(--font-sans);
+  color: var(--color-gray-800);
+}
+
+
+
+
+/* --- ANIMASI LOGIN SCROLL --- */
+@keyframes scrollUp {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes scrollDown {
+  0% {
+    transform: translateY(-50%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animate-scroll-up {
+  animation: scrollUp 40s linear infinite;
+}
+
+.animate-scroll-down {
+  animation: scrollDown 40s linear infinite;
+}
+
+/* Optional: Pause saat di-hover biar estetik */
+/* .animate-scroll-up:hover, .animate-scroll-down:hover {
+    animation-play-state: paused;
+  } */

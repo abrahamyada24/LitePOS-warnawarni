@@ -1,0 +1,1004 @@
+--------- beginning of main
+03-16 10:10:37.749 24246 24405 E HostApi : failed to execute
+03-16 10:10:37.749 24246 24405 E HostApi : java.lang.Exception: invalid transaction
+03-16 10:10:37.749 24246 24405 E HostApi : 	at zu.k.I(r8-map-id-307d0adbf52976fe1f45be7d58588403105471e9da9bb9d00fa7c16af237da99:24)
+03-16 10:10:37.749 24246 24405 E HostApi : 	at zu.a.run(r8-map-id-307d0adbf52976fe1f45be7d58588403105471e9da9bb9d00fa7c16af237da99:5)
+03-16 10:10:37.749 24246 24405 E HostApi : 	at zu.t.w(r8-map-id-307d0adbf52976fe1f45be7d58588403105471e9da9bb9d00fa7c16af237da99:4)
+03-16 10:10:37.749 24246 24405 E HostApi : 	at zu.l.run(r8-map-id-307d0adbf52976fe1f45be7d58588403105471e9da9bb9d00fa7c16af237da99:7)
+03-16 10:10:37.749 24246 24405 E HostApi : 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1154)
+03-16 10:10:37.749 24246 24405 E HostApi : 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:652)
+03-16 10:10:37.749 24246 24405 E HostApi : 	at java.lang.Thread.run(Thread.java:1564)
+03-16 10:10:37.751 24246 24246 E flutter : [ERROR:flutter/runtime/dart_vm_initializer.cc(40)] Unhandled Exception: PlatformException(java.lang.Exception: invalid transaction, Exception, Cause: null, Stacktrace: java.lang.Exception: invalid transaction
+03-16 10:10:37.751 24246 24246 E flutter : 	at zu.k.I(r8-map-id-307d0adbf52976fe1f45be7d58588403105471e9da9bb9d00fa7c16af237da99:24)
+03-16 10:10:37.751 24246 24246 E flutter : 	at zu.a.run(r8-map-id-307d0adbf52976fe1f45be7d58588403105471e9da9bb9d00fa7c16af237da99:5)
+03-16 10:10:37.751 24246 24246 E flutter : 	at zu.t.w(r8-map-id-307d0adbf52976fe1f45be7d58588403105471e9da9bb9d00fa7c16af237da99:4)
+03-16 10:10:37.751 24246 24246 E flutter : 	at zu.l.run(r8-map-id-307d0adbf52976fe1f45be7d58588403105471e9da9bb9d00fa7c16af237da99:7)
+03-16 10:10:37.751 24246 24246 E flutter : 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1154)
+03-16 10:10:37.751 24246 24246 E flutter : 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:652)
+03-16 10:10:37.751 24246 24246 E flutter : 	at java.lang.Thread.run(Thread.java:1564)
+03-16 10:10:37.751 24246 24246 E flutter : , null)
+03-16 10:10:37.751 24246 24246 E flutter : *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+03-16 10:10:37.751 24246 24246 E flutter : pid: 24246, tid: 542154636576, name 1.ui
+03-16 10:10:37.751 24246 24246 E flutter : os: android arch: arm64 comp: yes sim: no
+03-16 10:10:37.751 24246 24246 E flutter : build_id: '4f1bdaed506f5057128a5ff30c890837'
+03-16 10:10:37.751 24246 24246 E flutter : isolate_dso_base: 7cd54df000, vm_dso_base: 7cd54df000
+03-16 10:10:37.751 24246 24246 E flutter : isolate_instructions: 7cd5975940, vm_instructions: 7cd595f000
+03-16 10:10:37.751 24246 24246 E flutter :     #00 abs 0000007cd630daf7 virt 0000000000e2eaf7 _kDartIsolateSnapshotInstructions+0x9981b7
+03-16 10:10:37.751 24246 24246 E flutter : <asynchronous suspension>
+03-16 10:10:37.751 24246 24246 E flutter :     #01 abs 0000007cd630d887 virt 0000000000e2e887 _kDartIsolateSnapshotInstructions+0x997f47
+03-16 10:10:37.751 24246 24246 E flutter : <asynchronous suspension>
+03-16 10:10:37.751 24246 24246 E flutter :     #02 abs 0000007cd63205cb virt 0000000000e415cb _kDartIsolateSnapshotInstructions+0x9aac8b
+03-16 10:10:37.751 24246 24246 E flutter : <asynchronous suspension>
+03-16 10:10:37.751 24246 24246 E flutter :     #03 abs 0000007cd63204cf virt 0000000000e414cf _kDartIsolateSnapshotInstructions+0x9aab8f
+03-16 10:10:37.751 24246 24246 E flutter : <asynchronous suspension>
+03-16 10:10:37.751 24246 24246 E flutter :     #04 abs 0000007cd630f457 virt 0000000000e30457 _kDartIsolateSnapshotInstructions+0x999b17
+03-16 10:10:37.751 24246 24246 E flutter : <asynchronous suspension>
+03-16 10:10:37.751 24246 24246 E flutter :     #05 abs 0000007cd6320417 virt 0000000000e41417 _kDartIsolateSnapshotInstructions+0x9aaad7
+03-16 10:10:37.751 24246 24246 E flutter : <asynchronous suspension>
+03-16 10:10:37.751 24246 24246 E flutter : 
+03-16 10:10:38.112 24872 24917 E HeliumCrashReporter: Pending crash path /data/data/com.instagram.barcelona/cache/webview_embedded/Helium Crashpad/pending/ is not a directory
+03-16 10:10:38.187 24872 24872 E HiddenApis2: Failed to init DecodeJObjectFuncPtr
+03-16 10:10:38.262 24872 24872 E QPLProvider: QuickPerformanceLogger instance wasn't installed in provider, returning noop. Please call QuickPerformanceLoggerProvider.setQuickPerformanceLogger() before getting the instance.
+03-16 10:10:38.262 24872 24872 E QPLProvider: java.lang.IllegalStateException: No QPL instance provided
+03-16 10:10:38.262 24872 24872 E QPLProvider: 	at com.facebook.quicklog.QuickPerformanceLoggerProvider.getQPLInstance(:8)
+03-16 10:10:38.262 24872 24872 E QPLProvider: 	at X.2jp.A01(:12)
+03-16 10:10:38.262 24872 24872 E QPLProvider: 	at X.2jp.Apd(:2)
+03-16 10:10:38.262 24872 24872 E QPLProvider: 	at X.2jk.<init>(:7)
+03-16 10:10:38.262 24872 24872 E QPLProvider: 	at X.2jl.A00(:18)
+03-16 10:10:38.262 24872 24872 E QPLProvider: 	at X.2ji.<init>(:16)
+03-16 10:10:38.262 24872 24872 E QPLProvider: 	at X.1vr.A04(:36)
+03-16 10:10:38.262 24872 24872 E QPLProvider: 	at X.1vh.A02(:39)
+03-16 10:10:38.262 24872 24872 E QPLProvider: 	at com.instagram.barcelona.process.main.BarcelonaApplicationForMainProcess.A07(:2351)
+03-16 10:10:38.262 24872 24872 E QPLProvider: 	at com.instagram.barcelona.app.BarcelonaAppShell.onCreate(Unknown Source:677)
+03-16 10:10:38.262 24872 24872 E QPLProvider: 	at android.app.Instrumentation.callApplicationOnCreate(Instrumentation.java:1386)
+03-16 10:10:38.262 24872 24872 E QPLProvider: 	at android.app.ActivityThread.handleBindApplication(ActivityThread.java:7686)
+03-16 10:10:38.262 24872 24872 E QPLProvider: 	at android.app.ActivityThread.-$$Nest$mhandleBindApplication(Unknown Source:0)
+03-16 10:10:38.262 24872 24872 E QPLProvider: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2531)
+03-16 10:10:38.262 24872 24872 E QPLProvider: 	at android.os.Handler.dispatchMessage(Handler.java:112)
+03-16 10:10:38.262 24872 24872 E QPLProvider: 	at android.os.Looper.loopOnce(Looper.java:268)
+03-16 10:10:38.262 24872 24872 E QPLProvider: 	at android.os.Looper.loop(Looper.java:384)
+03-16 10:10:38.262 24872 24872 E QPLProvider: 	at android.app.ActivityThread.main(ActivityThread.java:8936)
+03-16 10:10:38.262 24872 24872 E QPLProvider: 	at java.lang.reflect.Method.invoke(Native Method)
+03-16 10:10:38.262 24872 24872 E QPLProvider: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:580)
+03-16 10:10:38.262 24872 24872 E QPLProvider: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:907)
+03-16 10:10:38.263 24872 24872 E QPLProvider: QuickPerformanceLogger instance wasn't installed in provider, returning noop. Please call QuickPerformanceLoggerProvider.setQuickPerformanceLogger() before getting the instance.
+03-16 10:10:38.263 24872 24872 E QPLProvider: java.lang.IllegalStateException: No QPL instance provided
+03-16 10:10:38.263 24872 24872 E QPLProvider: 	at com.facebook.quicklog.QuickPerformanceLoggerProvider.getQPLInstance(:8)
+03-16 10:10:38.263 24872 24872 E QPLProvider: 	at X.2jp.A01(:24)
+03-16 10:10:38.263 24872 24872 E QPLProvider: 	at X.2jp.Apd(:2)
+03-16 10:10:38.263 24872 24872 E QPLProvider: 	at X.2jk.<init>(:7)
+03-16 10:10:38.263 24872 24872 E QPLProvider: 	at X.2jl.A00(:18)
+03-16 10:10:38.263 24872 24872 E QPLProvider: 	at X.2ji.<init>(:16)
+03-16 10:10:38.263 24872 24872 E QPLProvider: 	at X.1vr.A04(:36)
+03-16 10:10:38.263 24872 24872 E QPLProvider: 	at X.1vh.A02(:39)
+03-16 10:10:38.263 24872 24872 E QPLProvider: 	at com.instagram.barcelona.process.main.BarcelonaApplicationForMainProcess.A07(:2351)
+03-16 10:10:38.263 24872 24872 E QPLProvider: 	at com.instagram.barcelona.app.BarcelonaAppShell.onCreate(Unknown Source:677)
+03-16 10:10:38.263 24872 24872 E QPLProvider: 	at android.app.Instrumentation.callApplicationOnCreate(Instrumentation.java:1386)
+03-16 10:10:38.263 24872 24872 E QPLProvider: 	at android.app.ActivityThread.handleBindApplication(ActivityThread.java:7686)
+03-16 10:10:38.263 24872 24872 E QPLProvider: 	at android.app.ActivityThread.-$$Nest$mhandleBindApplication(Unknown Source:0)
+03-16 10:10:38.263 24872 24872 E QPLProvider: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2531)
+03-16 10:10:38.263 24872 24872 E QPLProvider: 	at android.os.Handler.dispatchMessage(Handler.java:112)
+03-16 10:10:38.263 24872 24872 E QPLProvider: 	at android.os.Looper.loopOnce(Looper.java:268)
+03-16 10:10:38.263 24872 24872 E QPLProvider: 	at android.os.Looper.loop(Looper.java:384)
+03-16 10:10:38.263 24872 24872 E QPLProvider: 	at android.app.ActivityThread.main(ActivityThread.java:8936)
+03-16 10:10:38.263 24872 24872 E QPLProvider: 	at java.lang.reflect.Method.invoke(Native Method)
+03-16 10:10:38.263 24872 24872 E QPLProvider: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:580)
+03-16 10:10:38.263 24872 24872 E QPLProvider: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:907)
+03-16 10:10:38.263 24872 24872 E QPLProvider: QuickPerformanceLogger instance wasn't installed in provider, returning noop. Please call QuickPerformanceLoggerProvider.setQuickPerformanceLogger() before getting the instance.
+03-16 10:10:38.263 24872 24872 E QPLProvider: java.lang.IllegalStateException: No QPL instance provided
+03-16 10:10:38.263 24872 24872 E QPLProvider: 	at com.facebook.quicklog.QuickPerformanceLoggerProvider.getQPLInstance(:8)
+03-16 10:10:38.263 24872 24872 E QPLProvider: 	at X.2jp.A01(:40)
+03-16 10:10:38.263 24872 24872 E QPLProvider: 	at X.2jp.Apd(:2)
+03-16 10:10:38.263 24872 24872 E QPLProvider: 	at X.2jk.<init>(:7)
+03-16 10:10:38.263 24872 24872 E QPLProvider: 	at X.2jl.A00(:18)
+03-16 10:10:38.263 24872 24872 E QPLProvider: 	at X.2ji.<init>(:16)
+03-16 10:10:38.263 24872 24872 E QPLProvider: 	at X.1vr.A04(:36)
+03-16 10:10:38.263 24872 24872 E QPLProvider: 	at X.1vh.A02(:39)
+03-16 10:10:38.263 24872 24872 E QPLProvider: 	at com.instagram.barcelona.process.main.BarcelonaApplicationForMainProcess.A07(:2351)
+03-16 10:10:38.263 24872 24872 E QPLProvider: 	at com.instagram.barcelona.app.BarcelonaAppShell.onCreate(Unknown Source:677)
+03-16 10:10:38.263 24872 24872 E QPLProvider: 	at android.app.Instrumentation.callApplicationOnCreate(Instrumentation.java:1386)
+03-16 10:10:38.263 24872 24872 E QPLProvider: 	at android.app.ActivityThread.handleBindApplication(ActivityThread.java:7686)
+03-16 10:10:38.263 24872 24872 E QPLProvider: 	at android.app.ActivityThread.-$$Nest$mhandleBindApplication(Unknown Source:0)
+03-16 10:10:38.263 24872 24872 E QPLProvider: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2531)
+03-16 10:10:38.263 24872 24872 E QPLProvider: 	at android.os.Handler.dispatchMessage(Handler.java:112)
+03-16 10:10:38.263 24872 24872 E QPLProvider: 	at android.os.Looper.loopOnce(Looper.java:268)
+03-16 10:10:38.263 24872 24872 E QPLProvider: 	at android.os.Looper.loop(Looper.java:384)
+03-16 10:10:38.263 24872 24872 E QPLProvider: 	at android.app.ActivityThread.main(ActivityThread.java:8936)
+03-16 10:10:38.263 24872 24872 E QPLProvider: 	at java.lang.reflect.Method.invoke(Native Method)
+03-16 10:10:38.263 24872 24872 E QPLProvider: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:580)
+03-16 10:10:38.263 24872 24872 E QPLProvider: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:907)
+03-16 10:10:38.264 24872 24872 E QPLProvider: QuickPerformanceLogger instance wasn't installed in provider, returning noop. Please call QuickPerformanceLoggerProvider.setQuickPerformanceLogger() before getting the instance.
+03-16 10:10:38.264 24872 24872 E QPLProvider: java.lang.IllegalStateException: No QPL instance provided
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at com.facebook.quicklog.QuickPerformanceLoggerProvider.getQPLInstance(:8)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at X.2jp.A01(:55)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at X.2jp.Apd(:2)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at X.2jk.<init>(:7)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at X.2jl.A00(:18)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at X.2ji.<init>(:16)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at X.1vr.A04(:36)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at X.1vh.A02(:39)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at com.instagram.barcelona.process.main.BarcelonaApplicationForMainProcess.A07(:2351)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at com.instagram.barcelona.app.BarcelonaAppShell.onCreate(Unknown Source:677)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at android.app.Instrumentation.callApplicationOnCreate(Instrumentation.java:1386)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at android.app.ActivityThread.handleBindApplication(ActivityThread.java:7686)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at android.app.ActivityThread.-$$Nest$mhandleBindApplication(Unknown Source:0)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2531)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at android.os.Handler.dispatchMessage(Handler.java:112)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at android.os.Looper.loopOnce(Looper.java:268)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at android.os.Looper.loop(Looper.java:384)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at android.app.ActivityThread.main(ActivityThread.java:8936)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at java.lang.reflect.Method.invoke(Native Method)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:580)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:907)
+03-16 10:10:38.264 24872 24872 E QPLProvider: QuickPerformanceLogger instance wasn't installed in provider, returning noop. Please call QuickPerformanceLoggerProvider.setQuickPerformanceLogger() before getting the instance.
+03-16 10:10:38.264 24872 24872 E QPLProvider: java.lang.IllegalStateException: No QPL instance provided
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at com.facebook.quicklog.QuickPerformanceLoggerProvider.getQPLInstance(:8)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at X.2jp.A01(:66)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at X.2jp.Apd(:2)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at X.2jk.<init>(:7)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at X.2jl.A00(:18)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at X.2ji.<init>(:16)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at X.1vr.A04(:36)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at X.1vh.A02(:39)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at com.instagram.barcelona.process.main.BarcelonaApplicationForMainProcess.A07(:2351)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at com.instagram.barcelona.app.BarcelonaAppShell.onCreate(Unknown Source:677)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at android.app.Instrumentation.callApplicationOnCreate(Instrumentation.java:1386)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at android.app.ActivityThread.handleBindApplication(ActivityThread.java:7686)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at android.app.ActivityThread.-$$Nest$mhandleBindApplication(Unknown Source:0)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2531)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at android.os.Handler.dispatchMessage(Handler.java:112)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at android.os.Looper.loopOnce(Looper.java:268)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at android.os.Looper.loop(Looper.java:384)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at android.app.ActivityThread.main(ActivityThread.java:8936)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at java.lang.reflect.Method.invoke(Native Method)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:580)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:907)
+03-16 10:10:38.264 24872 24872 E QPLProvider: QuickPerformanceLogger instance wasn't installed in provider, returning noop. Please call QuickPerformanceLoggerProvider.setQuickPerformanceLogger() before getting the instance.
+03-16 10:10:38.264 24872 24872 E QPLProvider: java.lang.IllegalStateException: No QPL instance provided
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at com.facebook.quicklog.QuickPerformanceLoggerProvider.getQPLInstance(:8)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at X.2jp.A01(:91)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at X.2jp.Apd(:2)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at X.2jk.<init>(:7)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at X.2jl.A00(:18)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at X.2ji.<init>(:16)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at X.1vr.A04(:36)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at X.1vh.A02(:39)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at com.instagram.barcelona.process.main.BarcelonaApplicationForMainProcess.A07(:2351)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at com.instagram.barcelona.app.BarcelonaAppShell.onCreate(Unknown Source:677)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at android.app.Instrumentation.callApplicationOnCreate(Instrumentation.java:1386)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at android.app.ActivityThread.handleBindApplication(ActivityThread.java:7686)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at android.app.ActivityThread.-$$Nest$mhandleBindApplication(Unknown Source:0)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2531)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at android.os.Handler.dispatchMessage(Handler.java:112)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at android.os.Looper.loopOnce(Looper.java:268)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at android.os.Looper.loop(Looper.java:384)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at android.app.ActivityThread.main(ActivityThread.java:8936)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at java.lang.reflect.Method.invoke(Native Method)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:580)
+03-16 10:10:38.264 24872 24872 E QPLProvider: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:907)
+03-16 10:10:38.265 24872 24872 E QPLProvider: QuickPerformanceLogger instance wasn't installed in provider, returning noop. Please call QuickPerformanceLoggerProvider.setQuickPerformanceLogger() before getting the instance.
+03-16 10:10:38.265 24872 24872 E QPLProvider: java.lang.IllegalStateException: No QPL instance provided
+03-16 10:10:38.265 24872 24872 E QPLProvider: 	at com.facebook.quicklog.QuickPerformanceLoggerProvider.getQPLInstance(:8)
+03-16 10:10:38.265 24872 24872 E QPLProvider: 	at X.2jp.A01(:102)
+03-16 10:10:38.265 24872 24872 E QPLProvider: 	at X.2jp.Apd(:2)
+03-16 10:10:38.265 24872 24872 E QPLProvider: 	at X.2jk.<init>(:7)
+03-16 10:10:38.265 24872 24872 E QPLProvider: 	at X.2jl.A00(:18)
+03-16 10:10:38.265 24872 24872 E QPLProvider: 	at X.2ji.<init>(:16)
+03-16 10:10:38.265 24872 24872 E QPLProvider: 	at X.1vr.A04(:36)
+03-16 10:10:38.265 24872 24872 E QPLProvider: 	at X.1vh.A02(:39)
+03-16 10:10:38.265 24872 24872 E QPLProvider: 	at com.instagram.barcelona.process.main.BarcelonaApplicationForMainProcess.A07(:2351)
+03-16 10:10:38.265 24872 24872 E QPLProvider: 	at com.instagram.barcelona.app.BarcelonaAppShell.onCreate(Unknown Source:677)
+03-16 10:10:38.265 24872 24872 E QPLProvider: 	at android.app.Instrumentation.callApplicationOnCreate(Instrumentation.java:1386)
+03-16 10:10:38.265 24872 24872 E QPLProvider: 	at android.app.ActivityThread.handleBindApplication(ActivityThread.java:7686)
+03-16 10:10:38.265 24872 24872 E QPLProvider: 	at android.app.ActivityThread.-$$Nest$mhandleBindApplication(Unknown Source:0)
+03-16 10:10:38.265 24872 24872 E QPLProvider: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2531)
+03-16 10:10:38.265 24872 24872 E QPLProvider: 	at android.os.Handler.dispatchMessage(Handler.java:112)
+03-16 10:10:38.265 24872 24872 E QPLProvider: 	at android.os.Looper.loopOnce(Looper.java:268)
+03-16 10:10:38.265 24872 24872 E QPLProvider: 	at android.os.Looper.loop(Looper.java:384)
+03-16 10:10:38.265 24872 24872 E QPLProvider: 	at android.app.ActivityThread.main(ActivityThread.java:8936)
+03-16 10:10:38.265 24872 24872 E QPLProvider: 	at java.lang.reflect.Method.invoke(Native Method)
+03-16 10:10:38.265 24872 24872 E QPLProvider: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:580)
+03-16 10:10:38.265 24872 24872 E QPLProvider: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:907)
+03-16 10:10:38.270 24872 24872 E QPLProvider: QuickPerformanceLogger instance wasn't installed in provider, returning noop. Please call QuickPerformanceLoggerProvider.setQuickPerformanceLogger() before getting the instance.
+03-16 10:10:38.270 24872 24872 E QPLProvider: java.lang.IllegalStateException: No QPL instance provided
+03-16 10:10:38.270 24872 24872 E QPLProvider: 	at com.facebook.quicklog.QuickPerformanceLoggerProvider.getQPLInstance(:8)
+03-16 10:10:38.270 24872 24872 E QPLProvider: 	at X.2jp.A01(:116)
+03-16 10:10:38.270 24872 24872 E QPLProvider: 	at X.2jp.Apd(:2)
+03-16 10:10:38.270 24872 24872 E QPLProvider: 	at X.2jk.<init>(:7)
+03-16 10:10:38.270 24872 24872 E QPLProvider: 	at X.2jl.A00(:18)
+03-16 10:10:38.270 24872 24872 E QPLProvider: 	at X.2ji.<init>(:16)
+03-16 10:10:38.270 24872 24872 E QPLProvider: 	at X.1vr.A04(:36)
+03-16 10:10:38.270 24872 24872 E QPLProvider: 	at X.1vh.A02(:39)
+03-16 10:10:38.270 24872 24872 E QPLProvider: 	at com.instagram.barcelona.process.main.BarcelonaApplicationForMainProcess.A07(:2351)
+03-16 10:10:38.270 24872 24872 E QPLProvider: 	at com.instagram.barcelona.app.BarcelonaAppShell.onCreate(Unknown Source:677)
+03-16 10:10:38.270 24872 24872 E QPLProvider: 	at android.app.Instrumentation.callApplicationOnCreate(Instrumentation.java:1386)
+03-16 10:10:38.270 24872 24872 E QPLProvider: 	at android.app.ActivityThread.handleBindApplication(ActivityThread.java:7686)
+03-16 10:10:38.270 24872 24872 E QPLProvider: 	at android.app.ActivityThread.-$$Nest$mhandleBindApplication(Unknown Source:0)
+03-16 10:10:38.270 24872 24872 E QPLProvider: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2531)
+03-16 10:10:38.270 24872 24872 E QPLProvider: 	at android.os.Handler.dispatchMessage(Handler.java:112)
+03-16 10:10:38.270 24872 24872 E QPLProvider: 	at android.os.Looper.loopOnce(Looper.java:268)
+03-16 10:10:38.270 24872 24872 E QPLProvider: 	at android.os.Looper.loop(Looper.java:384)
+03-16 10:10:38.270 24872 24872 E QPLProvider: 	at android.app.ActivityThread.main(ActivityThread.java:8936)
+03-16 10:10:38.270 24872 24872 E QPLProvider: 	at java.lang.reflect.Method.invoke(Native Method)
+03-16 10:10:38.270 24872 24872 E QPLProvider: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:580)
+03-16 10:10:38.270 24872 24872 E QPLProvider: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:907)
+03-16 10:10:38.271 24872 24872 E QPLProvider: QuickPerformanceLogger instance wasn't installed in provider, returning noop. Please call QuickPerformanceLoggerProvider.setQuickPerformanceLogger() before getting the instance.
+03-16 10:10:38.271 24872 24872 E QPLProvider: java.lang.IllegalStateException: No QPL instance provided
+03-16 10:10:38.271 24872 24872 E QPLProvider: 	at com.facebook.quicklog.QuickPerformanceLoggerProvider.getQPLInstance(:8)
+03-16 10:10:38.271 24872 24872 E QPLProvider: 	at X.2jp.A01(:140)
+03-16 10:10:38.271 24872 24872 E QPLProvider: 	at X.2jp.Apd(:2)
+03-16 10:10:38.271 24872 24872 E QPLProvider: 	at X.2jk.<init>(:7)
+03-16 10:10:38.271 24872 24872 E QPLProvider: 	at X.2jl.A00(:18)
+03-16 10:10:38.271 24872 24872 E QPLProvider: 	at X.2ji.<init>(:16)
+03-16 10:10:38.271 24872 24872 E QPLProvider: 	at X.1vr.A04(:36)
+03-16 10:10:38.271 24872 24872 E QPLProvider: 	at X.1vh.A02(:39)
+03-16 10:10:38.271 24872 24872 E QPLProvider: 	at com.instagram.barcelona.process.main.BarcelonaApplicationForMainProcess.A07(:2351)
+03-16 10:10:38.271 24872 24872 E QPLProvider: 	at com.instagram.barcelona.app.BarcelonaAppShell.onCreate(Unknown Source:677)
+03-16 10:10:38.271 24872 24872 E QPLProvider: 	at android.app.Instrumentation.callApplicationOnCreate(Instrumentation.java:1386)
+03-16 10:10:38.271 24872 24872 E QPLProvider: 	at android.app.ActivityThread.handleBindApplication(ActivityThread.java:7686)
+03-16 10:10:38.271 24872 24872 E QPLProvider: 	at android.app.ActivityThread.-$$Nest$mhandleBindApplication(Unknown Source:0)
+03-16 10:10:38.271 24872 24872 E QPLProvider: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2531)
+03-16 10:10:38.271 24872 24872 E QPLProvider: 	at android.os.Handler.dispatchMessage(Handler.java:112)
+03-16 10:10:38.271 24872 24872 E QPLProvider: 	at android.os.Looper.loopOnce(Looper.java:268)
+03-16 10:10:38.271 24872 24872 E QPLProvider: 	at android.os.Looper.loop(Looper.java:384)
+03-16 10:10:38.271 24872 24872 E QPLProvider: 	at android.app.ActivityThread.main(ActivityThread.java:8936)
+03-16 10:10:38.271 24872 24872 E QPLProvider: 	at java.lang.reflect.Method.invoke(Native Method)
+03-16 10:10:38.271 24872 24872 E QPLProvider: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:580)
+03-16 10:10:38.271 24872 24872 E QPLProvider: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:907)
+03-16 10:10:38.313 24872 24925 E QPLProvider: QuickPerformanceLogger instance wasn't installed in provider, returning noop. Please call QuickPerformanceLoggerProvider.setQuickPerformanceLogger() before getting the instance.
+03-16 10:10:38.313 24872 24925 E QPLProvider: java.lang.IllegalStateException: No QPL instance provided
+03-16 10:10:38.313 24872 24925 E QPLProvider: 	at com.facebook.quicklog.QuickPerformanceLoggerProvider.getQPLInstance(:8)
+03-16 10:10:38.313 24872 24925 E QPLProvider: 	at X.2kq.A01(:10)
+03-16 10:10:38.313 24872 24925 E QPLProvider: 	at X.2jp.Apd(:2)
+03-16 10:10:38.313 24872 24925 E QPLProvider: 	at X.2qi.A00(:308)
+03-16 10:10:38.313 24872 24925 E QPLProvider: 	at X.2mq.get(:256)
+03-16 10:10:38.313 24872 24925 E QPLProvider: 	at X.2mu.A01(:9)
+03-16 10:10:38.313 24872 24925 E QPLProvider: 	at X.2mv.run(:83)
+03-16 10:10:38.313 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.313 24872 24925 E QPLProvider: 	at X.2it.run(:16)
+03-16 10:10:38.313 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.313 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.313 24872 24925 E QPLProvider: 	at X.1rn.A00(:110)
+03-16 10:10:38.313 24872 24925 E QPLProvider: 	at X.1rn.run(:136)
+03-16 10:10:38.314 24872 24925 E QPLProvider: QuickPerformanceLogger instance wasn't installed in provider, returning noop. Please call QuickPerformanceLoggerProvider.setQuickPerformanceLogger() before getting the instance.
+03-16 10:10:38.314 24872 24925 E QPLProvider: java.lang.IllegalStateException: No QPL instance provided
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at com.facebook.quicklog.QuickPerformanceLoggerProvider.getQPLInstance(:8)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.2kq.A01(:22)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.2jp.Apd(:2)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.2qi.A00(:308)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.2mq.get(:256)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.2mu.A01(:9)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.2mv.run(:83)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.2it.run(:16)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.1rn.A00(:110)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.1rn.run(:136)
+03-16 10:10:38.314 24872 24925 E QPLProvider: QuickPerformanceLogger instance wasn't installed in provider, returning noop. Please call QuickPerformanceLoggerProvider.setQuickPerformanceLogger() before getting the instance.
+03-16 10:10:38.314 24872 24925 E QPLProvider: java.lang.IllegalStateException: No QPL instance provided
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at com.facebook.quicklog.QuickPerformanceLoggerProvider.getQPLInstance(:8)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.2kq.A01(:36)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.2jp.Apd(:2)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.2qi.A00(:308)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.2mq.get(:256)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.2mu.A01(:9)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.2mv.run(:83)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.2it.run(:16)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.1rn.A00(:110)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.1rn.run(:136)
+03-16 10:10:38.314 24872 24925 E QPLProvider: QuickPerformanceLogger instance wasn't installed in provider, returning noop. Please call QuickPerformanceLoggerProvider.setQuickPerformanceLogger() before getting the instance.
+03-16 10:10:38.314 24872 24925 E QPLProvider: java.lang.IllegalStateException: No QPL instance provided
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at com.facebook.quicklog.QuickPerformanceLoggerProvider.getQPLInstance(:8)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.2jp.A01(:12)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.2kq.A01(:47)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.2jp.Apd(:2)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.2qi.A00(:308)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.2mq.get(:256)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.2mu.A01(:9)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.2mv.run(:83)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.2it.run(:16)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.1rn.A00(:110)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.1rn.run(:136)
+03-16 10:10:38.314 24872 24925 E QPLProvider: QuickPerformanceLogger instance wasn't installed in provider, returning noop. Please call QuickPerformanceLoggerProvider.setQuickPerformanceLogger() before getting the instance.
+03-16 10:10:38.314 24872 24925 E QPLProvider: java.lang.IllegalStateException: No QPL instance provided
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at com.facebook.quicklog.QuickPerformanceLoggerProvider.getQPLInstance(:8)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.2jp.A01(:24)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.2kq.A01(:47)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.2jp.Apd(:2)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.2qi.A00(:308)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.2mq.get(:256)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.2mu.A01(:9)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.2mv.run(:83)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.2it.run(:16)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.1rn.A00(:110)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.1rn.run(:136)
+03-16 10:10:38.314 24872 24925 E QPLProvider: QuickPerformanceLogger instance wasn't installed in provider, returning noop. Please call QuickPerformanceLoggerProvider.setQuickPerformanceLogger() before getting the instance.
+03-16 10:10:38.314 24872 24925 E QPLProvider: java.lang.IllegalStateException: No QPL instance provided
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at com.facebook.quicklog.QuickPerformanceLoggerProvider.getQPLInstance(:8)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.2jp.A01(:40)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.2kq.A01(:47)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.2jp.Apd(:2)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.2qi.A00(:308)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.2mq.get(:256)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.2mu.A01(:9)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.2mv.run(:83)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.2it.run(:16)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.1rn.A00(:110)
+03-16 10:10:38.314 24872 24925 E QPLProvider: 	at X.1rn.run(:136)
+03-16 10:10:38.315 24872 24925 E QPLProvider: QuickPerformanceLogger instance wasn't installed in provider, returning noop. Please call QuickPerformanceLoggerProvider.setQuickPerformanceLogger() before getting the instance.
+03-16 10:10:38.315 24872 24925 E QPLProvider: java.lang.IllegalStateException: No QPL instance provided
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at com.facebook.quicklog.QuickPerformanceLoggerProvider.getQPLInstance(:8)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.2jp.A01(:12)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.2jp.Apd(:2)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.2ji.A01(:33)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.2sy.A00(:10)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.2sw.<init>(:11)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.2kp.A00(:4)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.2jp.CkP(:47)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.2jp.A01(:51)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.2kq.A01(:47)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.2jp.Apd(:2)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.2qi.A00(:308)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.2mq.get(:256)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.2mu.A01(:9)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.2mv.run(:83)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.2it.run(:16)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.1rn.A00(:110)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.1rn.run(:136)
+03-16 10:10:38.315 24872 24925 E QPLProvider: QuickPerformanceLogger instance wasn't installed in provider, returning noop. Please call QuickPerformanceLoggerProvider.setQuickPerformanceLogger() before getting the instance.
+03-16 10:10:38.315 24872 24925 E QPLProvider: java.lang.IllegalStateException: No QPL instance provided
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at com.facebook.quicklog.QuickPerformanceLoggerProvider.getQPLInstance(:8)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.2jp.A01(:24)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.2jp.Apd(:2)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.2ji.A01(:33)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.2sy.A00(:10)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.2sw.<init>(:11)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.2kp.A00(:4)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.2jp.CkP(:47)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.2jp.A01(:51)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.2kq.A01(:47)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.2jp.Apd(:2)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.2qi.A00(:308)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.2mq.get(:256)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.2mu.A01(:9)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.2mv.run(:83)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.2it.run(:16)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.1rn.A00(:110)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.1rn.run(:136)
+03-16 10:10:38.315 24872 24925 E QPLProvider: QuickPerformanceLogger instance wasn't installed in provider, returning noop. Please call QuickPerformanceLoggerProvider.setQuickPerformanceLogger() before getting the instance.
+03-16 10:10:38.315 24872 24925 E QPLProvider: java.lang.IllegalStateException: No QPL instance provided
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at com.facebook.quicklog.QuickPerformanceLoggerProvider.getQPLInstance(:8)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.2jp.A01(:40)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.2jp.Apd(:2)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.2ji.A01(:33)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.2sy.A00(:10)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.2sw.<init>(:11)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.2kp.A00(:4)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.2jp.CkP(:47)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.2jp.A01(:51)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.2kq.A01(:47)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.2jp.Apd(:2)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.2qi.A00(:308)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.2mq.get(:256)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.2mu.A01(:9)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.2mv.run(:83)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.2it.run(:16)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.1rn.A00(:110)
+03-16 10:10:38.315 24872 24925 E QPLProvider: 	at X.1rn.run(:136)
+03-16 10:10:38.316 24872 24925 E QPLProvider: QuickPerformanceLogger instance wasn't installed in provider, returning noop. Please call QuickPerformanceLoggerProvider.setQuickPerformanceLogger() before getting the instance.
+03-16 10:10:38.316 24872 24925 E QPLProvider: java.lang.IllegalStateException: No QPL instance provided
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at com.facebook.quicklog.QuickPerformanceLoggerProvider.getQPLInstance(:8)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2jp.A01(:55)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2jp.Apd(:2)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2ji.A01(:33)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2sy.A00(:10)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2sw.<init>(:11)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2kp.A00(:4)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2jp.CkP(:47)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2jp.A01(:51)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2kq.A01(:47)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2jp.Apd(:2)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2qi.A00(:308)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2mq.get(:256)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2mu.A01(:9)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2mv.run(:83)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2it.run(:16)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.1rn.A00(:110)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.1rn.run(:136)
+03-16 10:10:38.316 24872 24925 E QPLProvider: QuickPerformanceLogger instance wasn't installed in provider, returning noop. Please call QuickPerformanceLoggerProvider.setQuickPerformanceLogger() before getting the instance.
+03-16 10:10:38.316 24872 24925 E QPLProvider: java.lang.IllegalStateException: No QPL instance provided
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at com.facebook.quicklog.QuickPerformanceLoggerProvider.getQPLInstance(:8)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2jp.A01(:66)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2jp.Apd(:2)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2ji.A01(:33)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2sy.A00(:10)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2sw.<init>(:11)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2kp.A00(:4)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2jp.CkP(:47)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2jp.A01(:51)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2kq.A01(:47)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2jp.Apd(:2)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2qi.A00(:308)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2mq.get(:256)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2mu.A01(:9)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2mv.run(:83)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2it.run(:16)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.1rn.A00(:110)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.1rn.run(:136)
+03-16 10:10:38.316 24872 24925 E QPLProvider: QuickPerformanceLogger instance wasn't installed in provider, returning noop. Please call QuickPerformanceLoggerProvider.setQuickPerformanceLogger() before getting the instance.
+03-16 10:10:38.316 24872 24925 E QPLProvider: java.lang.IllegalStateException: No QPL instance provided
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at com.facebook.quicklog.QuickPerformanceLoggerProvider.getQPLInstance(:8)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2jp.A01(:91)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2jp.Apd(:2)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2ji.A01(:33)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2sy.A00(:10)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2sw.<init>(:11)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2kp.A00(:4)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2jp.CkP(:47)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2jp.A01(:51)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2kq.A01(:47)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2jp.Apd(:2)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2qi.A00(:308)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2mq.get(:256)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2mu.A01(:9)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2mv.run(:83)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2it.run(:16)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.1rn.A00(:110)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.1rn.run(:136)
+03-16 10:10:38.316 24872 24925 E QPLProvider: QuickPerformanceLogger instance wasn't installed in provider, returning noop. Please call QuickPerformanceLoggerProvider.setQuickPerformanceLogger() before getting the instance.
+03-16 10:10:38.316 24872 24925 E QPLProvider: java.lang.IllegalStateException: No QPL instance provided
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at com.facebook.quicklog.QuickPerformanceLoggerProvider.getQPLInstance(:8)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2jp.A01(:102)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2jp.Apd(:2)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2ji.A01(:33)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2sy.A00(:10)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2sw.<init>(:11)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2kp.A00(:4)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2jp.CkP(:47)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2jp.A01(:51)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2kq.A01(:47)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2jp.Apd(:2)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2qi.A00(:308)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2mq.get(:256)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2mu.A01(:9)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2mv.run(:83)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.2it.run(:16)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.1rn.A00(:110)
+03-16 10:10:38.316 24872 24925 E QPLProvider: 	at X.1rn.run(:136)
+03-16 10:10:38.317 24872 24925 E QPLProvider: QuickPerformanceLogger instance wasn't installed in provider, returning noop. Please call QuickPerformanceLoggerProvider.setQuickPerformanceLogger() before getting the instance.
+03-16 10:10:38.317 24872 24925 E QPLProvider: java.lang.IllegalStateException: No QPL instance provided
+03-16 10:10:38.317 24872 24925 E QPLProvider: 	at com.facebook.quicklog.QuickPerformanceLoggerProvider.getQPLInstance(:8)
+03-16 10:10:38.317 24872 24925 E QPLProvider: 	at X.2jp.A01(:116)
+03-16 10:10:38.317 24872 24925 E QPLProvider: 	at X.2jp.Apd(:2)
+03-16 10:10:38.317 24872 24925 E QPLProvider: 	at X.2ji.A01(:33)
+03-16 10:10:38.317 24872 24925 E QPLProvider: 	at X.2sy.A00(:10)
+03-16 10:10:38.317 24872 24925 E QPLProvider: 	at X.2sw.<init>(:11)
+03-16 10:10:38.317 24872 24925 E QPLProvider: 	at X.2kp.A00(:4)
+03-16 10:10:38.317 24872 24925 E QPLProvider: 	at X.2jp.CkP(:47)
+03-16 10:10:38.317 24872 24925 E QPLProvider: 	at X.2jp.A01(:51)
+03-16 10:10:38.317 24872 24925 E QPLProvider: 	at X.2kq.A01(:47)
+03-16 10:10:38.317 24872 24925 E QPLProvider: 	at X.2jp.Apd(:2)
+03-16 10:10:38.317 24872 24925 E QPLProvider: 	at X.2qi.A00(:308)
+03-16 10:10:38.317 24872 24925 E QPLProvider: 	at X.2mq.get(:256)
+03-16 10:10:38.317 24872 24925 E QPLProvider: 	at X.2mu.A01(:9)
+03-16 10:10:38.317 24872 24925 E QPLProvider: 	at X.2mv.run(:83)
+03-16 10:10:38.317 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.317 24872 24925 E QPLProvider: 	at X.2it.run(:16)
+03-16 10:10:38.317 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.317 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.317 24872 24925 E QPLProvider: 	at X.1rn.A00(:110)
+03-16 10:10:38.317 24872 24925 E QPLProvider: 	at X.1rn.run(:136)
+03-16 10:10:38.318 24872 24925 E QPLProvider: QuickPerformanceLogger instance wasn't installed in provider, returning noop. Please call QuickPerformanceLoggerProvider.setQuickPerformanceLogger() before getting the instance.
+03-16 10:10:38.318 24872 24925 E QPLProvider: java.lang.IllegalStateException: No QPL instance provided
+03-16 10:10:38.318 24872 24925 E QPLProvider: 	at com.facebook.quicklog.QuickPerformanceLoggerProvider.getQPLInstance(:8)
+03-16 10:10:38.318 24872 24925 E QPLProvider: 	at X.2jp.A01(:140)
+03-16 10:10:38.318 24872 24925 E QPLProvider: 	at X.2jp.Apd(:2)
+03-16 10:10:38.318 24872 24925 E QPLProvider: 	at X.2ji.A01(:33)
+03-16 10:10:38.318 24872 24925 E QPLProvider: 	at X.2sy.A00(:10)
+03-16 10:10:38.318 24872 24925 E QPLProvider: 	at X.2sw.<init>(:11)
+03-16 10:10:38.318 24872 24925 E QPLProvider: 	at X.2kp.A00(:4)
+03-16 10:10:38.318 24872 24925 E QPLProvider: 	at X.2jp.CkP(:47)
+03-16 10:10:38.318 24872 24925 E QPLProvider: 	at X.2jp.A01(:51)
+03-16 10:10:38.318 24872 24925 E QPLProvider: 	at X.2kq.A01(:47)
+03-16 10:10:38.318 24872 24925 E QPLProvider: 	at X.2jp.Apd(:2)
+03-16 10:10:38.318 24872 24925 E QPLProvider: 	at X.2qi.A00(:308)
+03-16 10:10:38.318 24872 24925 E QPLProvider: 	at X.2mq.get(:256)
+03-16 10:10:38.318 24872 24925 E QPLProvider: 	at X.2mu.A01(:9)
+03-16 10:10:38.318 24872 24925 E QPLProvider: 	at X.2mv.run(:83)
+03-16 10:10:38.318 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.318 24872 24925 E QPLProvider: 	at X.2it.run(:16)
+03-16 10:10:38.318 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.318 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.318 24872 24925 E QPLProvider: 	at X.1rn.A00(:110)
+03-16 10:10:38.318 24872 24925 E QPLProvider: 	at X.1rn.run(:136)
+03-16 10:10:38.320 24872 24925 E QPLProvider: QuickPerformanceLogger instance wasn't installed in provider, returning noop. Please call QuickPerformanceLoggerProvider.setQuickPerformanceLogger() before getting the instance.
+03-16 10:10:38.320 24872 24925 E QPLProvider: java.lang.IllegalStateException: No QPL instance provided
+03-16 10:10:38.320 24872 24925 E QPLProvider: 	at com.facebook.quicklog.QuickPerformanceLoggerProvider.getQPLInstance(:8)
+03-16 10:10:38.320 24872 24925 E QPLProvider: 	at X.2jp.A01(:55)
+03-16 10:10:38.320 24872 24925 E QPLProvider: 	at X.2kq.A01(:47)
+03-16 10:10:38.320 24872 24925 E QPLProvider: 	at X.2jp.Apd(:2)
+03-16 10:10:38.320 24872 24925 E QPLProvider: 	at X.2qi.A00(:308)
+03-16 10:10:38.320 24872 24925 E QPLProvider: 	at X.2mq.get(:256)
+03-16 10:10:38.320 24872 24925 E QPLProvider: 	at X.2mu.A01(:9)
+03-16 10:10:38.320 24872 24925 E QPLProvider: 	at X.2mv.run(:83)
+03-16 10:10:38.320 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.320 24872 24925 E QPLProvider: 	at X.2it.run(:16)
+03-16 10:10:38.320 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.320 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.320 24872 24925 E QPLProvider: 	at X.1rn.A00(:110)
+03-16 10:10:38.320 24872 24925 E QPLProvider: 	at X.1rn.run(:136)
+03-16 10:10:38.320 24872 24925 E QPLProvider: QuickPerformanceLogger instance wasn't installed in provider, returning noop. Please call QuickPerformanceLoggerProvider.setQuickPerformanceLogger() before getting the instance.
+03-16 10:10:38.320 24872 24925 E QPLProvider: java.lang.IllegalStateException: No QPL instance provided
+03-16 10:10:38.320 24872 24925 E QPLProvider: 	at com.facebook.quicklog.QuickPerformanceLoggerProvider.getQPLInstance(:8)
+03-16 10:10:38.320 24872 24925 E QPLProvider: 	at X.2jp.A01(:66)
+03-16 10:10:38.320 24872 24925 E QPLProvider: 	at X.2kq.A01(:47)
+03-16 10:10:38.320 24872 24925 E QPLProvider: 	at X.2jp.Apd(:2)
+03-16 10:10:38.320 24872 24925 E QPLProvider: 	at X.2qi.A00(:308)
+03-16 10:10:38.320 24872 24925 E QPLProvider: 	at X.2mq.get(:256)
+03-16 10:10:38.320 24872 24925 E QPLProvider: 	at X.2mu.A01(:9)
+03-16 10:10:38.320 24872 24925 E QPLProvider: 	at X.2mv.run(:83)
+03-16 10:10:38.320 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.320 24872 24925 E QPLProvider: 	at X.2it.run(:16)
+03-16 10:10:38.320 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.320 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.320 24872 24925 E QPLProvider: 	at X.1rn.A00(:110)
+03-16 10:10:38.320 24872 24925 E QPLProvider: 	at X.1rn.run(:136)
+03-16 10:10:38.321 24872 24925 E QPLProvider: QuickPerformanceLogger instance wasn't installed in provider, returning noop. Please call QuickPerformanceLoggerProvider.setQuickPerformanceLogger() before getting the instance.
+03-16 10:10:38.321 24872 24925 E QPLProvider: java.lang.IllegalStateException: No QPL instance provided
+03-16 10:10:38.321 24872 24925 E QPLProvider: 	at com.facebook.quicklog.QuickPerformanceLoggerProvider.getQPLInstance(:8)
+03-16 10:10:38.321 24872 24925 E QPLProvider: 	at X.2jp.A01(:91)
+03-16 10:10:38.321 24872 24925 E QPLProvider: 	at X.2kq.A01(:47)
+03-16 10:10:38.321 24872 24925 E QPLProvider: 	at X.2jp.Apd(:2)
+03-16 10:10:38.321 24872 24925 E QPLProvider: 	at X.2qi.A00(:308)
+03-16 10:10:38.321 24872 24925 E QPLProvider: 	at X.2mq.get(:256)
+03-16 10:10:38.321 24872 24925 E QPLProvider: 	at X.2mu.A01(:9)
+03-16 10:10:38.321 24872 24925 E QPLProvider: 	at X.2mv.run(:83)
+03-16 10:10:38.321 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.321 24872 24925 E QPLProvider: 	at X.2it.run(:16)
+03-16 10:10:38.321 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.321 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.321 24872 24925 E QPLProvider: 	at X.1rn.A00(:110)
+03-16 10:10:38.321 24872 24925 E QPLProvider: 	at X.1rn.run(:136)
+03-16 10:10:38.321 24872 24925 E QPLProvider: QuickPerformanceLogger instance wasn't installed in provider, returning noop. Please call QuickPerformanceLoggerProvider.setQuickPerformanceLogger() before getting the instance.
+03-16 10:10:38.321 24872 24925 E QPLProvider: java.lang.IllegalStateException: No QPL instance provided
+03-16 10:10:38.321 24872 24925 E QPLProvider: 	at com.facebook.quicklog.QuickPerformanceLoggerProvider.getQPLInstance(:8)
+03-16 10:10:38.321 24872 24925 E QPLProvider: 	at X.2jp.A01(:102)
+03-16 10:10:38.321 24872 24925 E QPLProvider: 	at X.2kq.A01(:47)
+03-16 10:10:38.321 24872 24925 E QPLProvider: 	at X.2jp.Apd(:2)
+03-16 10:10:38.321 24872 24925 E QPLProvider: 	at X.2qi.A00(:308)
+03-16 10:10:38.321 24872 24925 E QPLProvider: 	at X.2mq.get(:256)
+03-16 10:10:38.321 24872 24925 E QPLProvider: 	at X.2mu.A01(:9)
+03-16 10:10:38.321 24872 24925 E QPLProvider: 	at X.2mv.run(:83)
+03-16 10:10:38.321 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.321 24872 24925 E QPLProvider: 	at X.2it.run(:16)
+03-16 10:10:38.321 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.321 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.321 24872 24925 E QPLProvider: 	at X.1rn.A00(:110)
+03-16 10:10:38.321 24872 24925 E QPLProvider: 	at X.1rn.run(:136)
+03-16 10:10:38.322 24872 24925 E QPLProvider: QuickPerformanceLogger instance wasn't installed in provider, returning noop. Please call QuickPerformanceLoggerProvider.setQuickPerformanceLogger() before getting the instance.
+03-16 10:10:38.322 24872 24925 E QPLProvider: java.lang.IllegalStateException: No QPL instance provided
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at com.facebook.quicklog.QuickPerformanceLoggerProvider.getQPLInstance(:8)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.2jp.A01(:116)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.2kq.A01(:47)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.2jp.Apd(:2)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.2qi.A00(:308)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.2mq.get(:256)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.2mu.A01(:9)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.2mv.run(:83)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.2it.run(:16)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.1rn.A00(:110)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.1rn.run(:136)
+03-16 10:10:38.322 24872 24925 E QPLProvider: QuickPerformanceLogger instance wasn't installed in provider, returning noop. Please call QuickPerformanceLoggerProvider.setQuickPerformanceLogger() before getting the instance.
+03-16 10:10:38.322 24872 24925 E QPLProvider: java.lang.IllegalStateException: No QPL instance provided
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at com.facebook.quicklog.QuickPerformanceLoggerProvider.getQPLInstance(:8)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.2jp.A01(:140)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.2kq.A01(:47)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.2jp.Apd(:2)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.2qi.A00(:308)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.2mq.get(:256)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.2mu.A01(:9)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.2mv.run(:83)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.2it.run(:16)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.1rn.A00(:110)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.1rn.run(:136)
+03-16 10:10:38.322 24872 24925 E QPLProvider: QuickPerformanceLogger instance wasn't installed in provider, returning noop. Please call QuickPerformanceLoggerProvider.setQuickPerformanceLogger() before getting the instance.
+03-16 10:10:38.322 24872 24925 E QPLProvider: java.lang.IllegalStateException: No QPL instance provided
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at com.facebook.quicklog.QuickPerformanceLoggerProvider.getQPLInstance(:8)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.2kq.A01(:51)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.2jp.Apd(:2)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.2qi.A00(:308)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.2mq.get(:256)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.2mu.A01(:9)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.2mv.run(:83)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.2it.run(:16)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.1rn.A00(:110)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.1rn.run(:136)
+03-16 10:10:38.322 24872 24925 E QPLProvider: QuickPerformanceLogger instance wasn't installed in provider, returning noop. Please call QuickPerformanceLoggerProvider.setQuickPerformanceLogger() before getting the instance.
+03-16 10:10:38.322 24872 24925 E QPLProvider: java.lang.IllegalStateException: No QPL instance provided
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at com.facebook.quicklog.QuickPerformanceLoggerProvider.getQPLInstance(:8)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.2kq.A01(:62)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.2jp.Apd(:2)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.2qi.A00(:308)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.2mq.get(:256)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.2mu.A01(:9)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.2mv.run(:83)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.2it.run(:16)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.1rn.A00(:110)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.1rn.run(:136)
+03-16 10:10:38.322 24872 24925 E QPLProvider: QuickPerformanceLogger instance wasn't installed in provider, returning noop. Please call QuickPerformanceLoggerProvider.setQuickPerformanceLogger() before getting the instance.
+03-16 10:10:38.322 24872 24925 E QPLProvider: java.lang.IllegalStateException: No QPL instance provided
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at com.facebook.quicklog.QuickPerformanceLoggerProvider.getQPLInstance(:8)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.2kq.A01(:93)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.2jp.Apd(:2)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.2qi.A00(:308)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.2mq.get(:256)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.2mu.A01(:9)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.2mv.run(:83)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.2it.run(:16)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.1rn.A00(:110)
+03-16 10:10:38.322 24872 24925 E QPLProvider: 	at X.1rn.run(:136)
+03-16 10:10:38.323 24872 24925 E QPLProvider: QuickPerformanceLogger instance wasn't installed in provider, returning noop. Please call QuickPerformanceLoggerProvider.setQuickPerformanceLogger() before getting the instance.
+03-16 10:10:38.323 24872 24925 E QPLProvider: java.lang.IllegalStateException: No QPL instance provided
+03-16 10:10:38.323 24872 24925 E QPLProvider: 	at com.facebook.quicklog.QuickPerformanceLoggerProvider.getQPLInstance(:8)
+03-16 10:10:38.323 24872 24925 E QPLProvider: 	at X.2kq.A01(:104)
+03-16 10:10:38.323 24872 24925 E QPLProvider: 	at X.2jp.Apd(:2)
+03-16 10:10:38.323 24872 24925 E QPLProvider: 	at X.2qi.A00(:308)
+03-16 10:10:38.323 24872 24925 E QPLProvider: 	at X.2mq.get(:256)
+03-16 10:10:38.323 24872 24925 E QPLProvider: 	at X.2mu.A01(:9)
+03-16 10:10:38.323 24872 24925 E QPLProvider: 	at X.2mv.run(:83)
+03-16 10:10:38.323 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.323 24872 24925 E QPLProvider: 	at X.2it.run(:16)
+03-16 10:10:38.323 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.323 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.323 24872 24925 E QPLProvider: 	at X.1rn.A00(:110)
+03-16 10:10:38.323 24872 24925 E QPLProvider: 	at X.1rn.run(:136)
+03-16 10:10:38.323 24872 24925 E QPLProvider: QuickPerformanceLogger instance wasn't installed in provider, returning noop. Please call QuickPerformanceLoggerProvider.setQuickPerformanceLogger() before getting the instance.
+03-16 10:10:38.323 24872 24925 E QPLProvider: java.lang.IllegalStateException: No QPL instance provided
+03-16 10:10:38.323 24872 24925 E QPLProvider: 	at com.facebook.quicklog.QuickPerformanceLoggerProvider.getQPLInstance(:8)
+03-16 10:10:38.323 24872 24925 E QPLProvider: 	at X.2kq.A01(:128)
+03-16 10:10:38.323 24872 24925 E QPLProvider: 	at X.2jp.Apd(:2)
+03-16 10:10:38.323 24872 24925 E QPLProvider: 	at X.2qi.A00(:308)
+03-16 10:10:38.323 24872 24925 E QPLProvider: 	at X.2mq.get(:256)
+03-16 10:10:38.323 24872 24925 E QPLProvider: 	at X.2mu.A01(:9)
+03-16 10:10:38.323 24872 24925 E QPLProvider: 	at X.2mv.run(:83)
+03-16 10:10:38.323 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.323 24872 24925 E QPLProvider: 	at X.2it.run(:16)
+03-16 10:10:38.323 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.323 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.323 24872 24925 E QPLProvider: 	at X.1rn.A00(:110)
+03-16 10:10:38.323 24872 24925 E QPLProvider: 	at X.1rn.run(:136)
+03-16 10:10:38.323 24872 24925 E QPLProvider: QuickPerformanceLogger instance wasn't installed in provider, returning noop. Please call QuickPerformanceLoggerProvider.setQuickPerformanceLogger() before getting the instance.
+03-16 10:10:38.323 24872 24925 E QPLProvider: java.lang.IllegalStateException: No QPL instance provided
+03-16 10:10:38.323 24872 24925 E QPLProvider: 	at com.facebook.quicklog.QuickPerformanceLoggerProvider.getQPLInstance(:8)
+03-16 10:10:38.323 24872 24925 E QPLProvider: 	at X.2kq.A01(:139)
+03-16 10:10:38.323 24872 24925 E QPLProvider: 	at X.2jp.Apd(:2)
+03-16 10:10:38.323 24872 24925 E QPLProvider: 	at X.2qi.A00(:308)
+03-16 10:10:38.323 24872 24925 E QPLProvider: 	at X.2mq.get(:256)
+03-16 10:10:38.323 24872 24925 E QPLProvider: 	at X.2mu.A01(:9)
+03-16 10:10:38.323 24872 24925 E QPLProvider: 	at X.2mv.run(:83)
+03-16 10:10:38.323 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.323 24872 24925 E QPLProvider: 	at X.2it.run(:16)
+03-16 10:10:38.323 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.323 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.323 24872 24925 E QPLProvider: 	at X.1rn.A00(:110)
+03-16 10:10:38.323 24872 24925 E QPLProvider: 	at X.1rn.run(:136)
+03-16 10:10:38.360 24872 24925 E QPLProvider: QuickPerformanceLogger instance wasn't installed in provider, returning noop. Please call QuickPerformanceLoggerProvider.setQuickPerformanceLogger() before getting the instance.
+03-16 10:10:38.360 24872 24925 E QPLProvider: java.lang.IllegalStateException: No QPL instance provided
+03-16 10:10:38.360 24872 24925 E QPLProvider: 	at com.facebook.quicklog.QuickPerformanceLoggerProvider.getQPLInstance(:8)
+03-16 10:10:38.360 24872 24925 E QPLProvider: 	at com.facebook.quicklog.QuickPerformanceLoggerNativeProvider.getQPLInstance(:0)
+03-16 10:10:38.360 24872 24925 E QPLProvider: 	at com.instagram.service.tigon.IGTigonService.initHybrid(Native Method)
+03-16 10:10:38.360 24872 24925 E QPLProvider: 	at com.instagram.service.tigon.IGTigonService.<init>(:34)
+03-16 10:10:38.360 24872 24925 E QPLProvider: 	at X.2qi.A00(:545)
+03-16 10:10:38.360 24872 24925 E QPLProvider: 	at X.2mq.get(:256)
+03-16 10:10:38.360 24872 24925 E QPLProvider: 	at X.2mu.A01(:9)
+03-16 10:10:38.360 24872 24925 E QPLProvider: 	at X.2mv.run(:83)
+03-16 10:10:38.360 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.360 24872 24925 E QPLProvider: 	at X.2it.run(:16)
+03-16 10:10:38.360 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.360 24872 24925 E QPLProvider: 	at X.1ry.run(:25)
+03-16 10:10:38.360 24872 24925 E QPLProvider: 	at X.1rn.A00(:110)
+03-16 10:10:38.360 24872 24925 E QPLProvider: 	at X.1rn.run(:136)
+03-16 10:10:38.368 24872 24872 E agram.barcelona: No implementation found for void com.facebook.quicklog.QuickPerformanceLoggerNativeProvider.nativeUpdateQPLInstance() (tried Java_com_facebook_quicklog_QuickPerformanceLoggerNativeProvider_nativeUpdateQPLInstance and Java_com_facebook_quicklog_QuickPerformanceLoggerNativeProvider_nativeUpdateQPLInstance__) - is the library loaded, e.g. System.loadLibrary?
+03-16 10:10:38.437 24872 24926 E MlockOptimization: mlock 0x7cfb464000 85385216 failed for 7cfb464000-7d005d2000 rw-p 00000000 fe:32 764356                         /data/app/~~tBqCmFXII_Qw-zVfnOAXjw==/com.instagram.barcelona-vRn_FM87lXRjj-Nqzbo6Nw==/oat/arm64/base.vdex
+03-16 10:10:38.745 24872 24926 E PendingMediaStoreSerializer: deserialize start
+03-16 10:10:38.745 24872 24926 E PendingMediaStoreSerializer: start reading pending media
+03-16 10:10:38.746 24872 24926 E PendingMediaStoreSerializer: Set the submedia on albums
+03-16 10:10:38.746 24872 24926 E PendingMediaStoreSerializer: Set the submedia on post threads
+03-16 10:10:38.746 24872 24926 E PendingMediaStoreSerializer: Set the submedia on story templates
+03-16 10:10:38.746 24872 24926 E PendingMediaStoreSerializer: deserialize is done. start calling callbacks
+03-16 10:10:38.746 24872 24926 E PendingMediaStoreSerializer: deserialize end
+03-16 10:10:38.810 24872 24872 E PendingMediaStoreSerializer: wait for deserialization lock
+03-16 10:10:38.810 24872 24872 E PendingMediaStoreSerializer: calling callbacks
+03-16 10:10:39.197 24872 24940 E PLog-plog_internal: PLogConfigFetcherCore: Fetch failed: java.lang.RuntimeException: Failed to fetch PLog configs: null xfbPlogConfigs
+03-16 10:10:39.197 24872 24940 E PLog-plog_internal: Sync failed with error: Failed to fetch PLog configs: null xfbPlogConfigs
+03-16 10:10:53.627 25036 25085 E m.freereels.app: No package ID 6a found for resource ID 0x6a0b0013.
+03-16 10:10:53.716  1269  1269 E Diag_Lib: diag:failed to connect to diag socket
+03-16 10:10:53.716  1269  1269 E Diag_Lib:  Diag_LSM_Init: Failed to open handle to diag driver, error = 13
+03-16 10:10:54.010  1269  1269 E Diag_Lib: diag: Diag_LSM_DeInit: invoked for pid: 1269
+03-16 10:10:54.010  1269  1269 E Diag_Lib: diag: Diag_LSM_DeInit: done for pid: 1269
+--------- beginning of system
+03-16 10:11:04.476  1997  2594 E JobScheduler.Quota: <0>com.google.android.apps.walletnfcrel has 0 EJ quota without running anything
+03-16 10:11:05.057  1311  1404 E ANDR-PERF-LM: MetaMeter: handleAsync() 166: AdaptLaunch Invalid Async
+03-16 10:11:05.058  1311  1404 E ANDR-PERF-LM: MetaMeter: handleAsync() 166: AdaptLaunch Invalid Async
+03-16 10:11:05.075  1311  1311 E ANDR-PERF-REQUEST: Qindx 137 is  not supported
+03-16 10:11:05.075  1311  1311 E ANDR-PERF-REQUEST: invalid request
+03-16 10:11:05.075  1311  1311 E ANDR-PERF-MPCTL: invalid request, no optimizations performed
+03-16 10:11:05.075  1282  1282 E QTI PowerHAL: Can't perform app launch hint
+03-16 10:11:05.092  1997  9708 E PersistenceController: SettingNotFoundException: sv_custom_ai_icon_enabled
+03-16 10:11:05.125  1311  1404 E ANDR-PERF-LM: MetaMeter: handleAsync() 166: AdaptLaunch Invalid Async
+03-16 10:11:05.164  1311  1404 E ANDR-PERF-LM: MetaMeter: handleAsync() 166: AdaptLaunch Invalid Async
+03-16 10:11:05.212  1997  2200 E ActivityManager: Failure starting process com.twitter.android
+03-16 10:11:05.212  1997  2200 E ActivityManager: java.lang.RuntimeException: SmartBackground restriction
+03-16 10:11:05.212  1997  2200 E ActivityManager: 	at com.android.server.am.ProcessList.startProcess(ProcessList.java:2595)
+03-16 10:11:05.212  1997  2200 E ActivityManager: 	at com.android.server.am.ProcessList.lambda$handleProcessStart$2(ProcessList.java:2369)
+03-16 10:11:05.212  1997  2200 E ActivityManager: 	at com.android.server.am.ProcessList.$r8$lambda$7tA7FGK86Ca7_MUb7SZX_VtkDjI(ProcessList.java:0)
+03-16 10:11:05.212  1997  2200 E ActivityManager: 	at com.android.server.am.ProcessList$$ExternalSyntheticLambda6.run(R8$$SyntheticClass:0)
+03-16 10:11:05.212  1997  2200 E ActivityManager: 	at com.android.server.am.ProcessList.handleProcessStart(ProcessList.java:2396)
+03-16 10:11:05.212  1997  2200 E ActivityManager: 	at com.android.server.am.ProcessList.lambda$startProcessLocked$1(ProcessList.java:2335)
+03-16 10:11:05.212  1997  2200 E ActivityManager: 	at com.android.server.am.ProcessList.$r8$lambda$CJ9r0QvrztLxvJRHzZHIx3Om9NE(ProcessList.java:0)
+03-16 10:11:05.212  1997  2200 E ActivityManager: 	at com.android.server.am.ProcessList$$ExternalSyntheticLambda5.run(R8$$SyntheticClass:0)
+03-16 10:11:05.212  1997  2200 E ActivityManager: 	at android.os.Handler.handleCallback(Handler.java:1001)
+03-16 10:11:05.212  1997  2200 E ActivityManager: 	at android.os.Handler.dispatchMessage(Handler.java:105)
+03-16 10:11:05.212  1997  2200 E ActivityManager: 	at android.os.Looper.loopOnce(Looper.java:268)
+03-16 10:11:05.212  1997  2200 E ActivityManager: 	at android.os.Looper.loop(Looper.java:384)
+03-16 10:11:05.212  1997  2200 E ActivityManager: 	at android.os.HandlerThread.run(HandlerThread.java:103)
+03-16 10:11:05.212  1997  2200 E ActivityManager: 	at com.android.server.ServiceThread.run(ServiceThread.java:46)
+03-16 10:11:05.225  1997  1997 E JobServiceContext: Binding died for 0:com.twitter.android
+03-16 10:11:05.245  4743  7418 E ModemStats: [NRCheckinApplication] MotoExtTelephonyInfo.NRCheckinEvents return null
+03-16 10:11:05.298 25260 25260 E SoLoader: Checking /data/app missing libraries.
+03-16 10:11:05.298 25260 25260 E SoLoader: Successfully recovered from /data/app disk failure.
+03-16 10:11:05.299 25260 25260 E SoLoader: Checking /data/data missing libraries.
+03-16 10:11:05.299 25260 25260 E SoLoader: No libraries missing from unpacking so paths while recovering /data/data failure
+--------- beginning of crash
+03-16 10:11:05.300 25260 25260 E AndroidRuntime: FATAL EXCEPTION: main
+03-16 10:11:05.300 25260 25260 E AndroidRuntime: Process: com.posandroid, PID: 25260
+03-16 10:11:05.300 25260 25260 E AndroidRuntime: com.facebook.soloader.SoLoaderDSONotFoundError: couldn't find DSO to load: libhermestooling.so
+03-16 10:11:05.300 25260 25260 E AndroidRuntime: 	existing SO sources: 
+03-16 10:11:05.300 25260 25260 E AndroidRuntime: 		SoSource 0: ApplicationSoSource[DirectorySoSource[root = /data/app/~~qBTS-Apqv9TBIHQTuAfy5g==/com.posandroid-RWUcAOFZt9_3pfkcPvc19w==/lib/arm64 flags = 0]]
+03-16 10:11:05.300 25260 25260 E AndroidRuntime: 		SoSource 1: DirectApkSoSource[root = [/data/app/~~qBTS-Apqv9TBIHQTuAfy5g==/com.posandroid-RWUcAOFZt9_3pfkcPvc19w==/base.apk!/lib/arm64-v8a]]
+03-16 10:11:05.300 25260 25260 E AndroidRuntime: 		SoSource 2: DirectorySoSource[root = /system/lib64 flags = 3]
+03-16 10:11:05.300 25260 25260 E AndroidRuntime: 		SoSource 3: DirectorySoSource[root = /vendor/lib64 flags = 3]
+03-16 10:11:05.300 25260 25260 E AndroidRuntime: 	Native lib dir: /data/app/~~qBTS-Apqv9TBIHQTuAfy5g==/com.posandroid-RWUcAOFZt9_3pfkcPvc19w==/lib/arm64
+03-16 10:11:05.300 25260 25260 E AndroidRuntime: 
+03-16 10:11:05.300 25260 25260 E AndroidRuntime: 	at com.facebook.soloader.SoLoader.doLoadLibraryBySoName(SoLoader.java:1216)
+03-16 10:11:05.300 25260 25260 E AndroidRuntime: 	at com.facebook.soloader.SoLoader.loadLibraryBySoNameImpl(SoLoader.java:1078)
+03-16 10:11:05.300 25260 25260 E AndroidRuntime: 	at com.facebook.soloader.SoLoader.loadLibraryBySoName(SoLoader.java:943)
+03-16 10:11:05.300 25260 25260 E AndroidRuntime: 	at com.facebook.soloader.SoLoader.loadLibraryOnAndroid(SoLoader.java:859)
+03-16 10:11:05.300 25260 25260 E AndroidRuntime: 	at com.facebook.soloader.SoLoader.loadLibrary(SoLoader.java:842)
+03-16 10:11:05.300 25260 25260 E AndroidRuntime: 	at com.facebook.soloader.SoLoader.loadLibrary(SoLoader.java:812)
+03-16 10:11:05.300 25260 25260 E AndroidRuntime: 	at com.facebook.react.runtime.hermes.HermesInstance.<clinit>(HermesInstance.kt:26)
+03-16 10:11:05.300 25260 25260 E AndroidRuntime: 	at com.facebook.react.defaults.DefaultReactHost.getDefaultReactHost(DefaultReactHost.kt:93)
+03-16 10:11:05.300 25260 25260 E AndroidRuntime: 	at com.facebook.react.defaults.DefaultReactHost.getDefaultReactHost$default(DefaultReactHost.kt:60)
+03-16 10:11:05.300 25260 25260 E AndroidRuntime: 	at com.posandroid.MainApplication.reactHost_delegate$lambda$1(MainApplication.kt:13)
+03-16 10:11:05.300 25260 25260 E AndroidRuntime: 	at com.posandroid.MainApplication.$r8$lambda$3TP1oUSoY_NhCrNVro4eMH8iRFI(Unknown Source:0)
+03-16 10:11:05.300 25260 25260 E AndroidRuntime: 	at com.posandroid.MainApplication$$ExternalSyntheticLambda0.invoke(D8$$SyntheticClass:0)
+03-16 10:11:05.300 25260 25260 E AndroidRuntime: 	at kotlin.SynchronizedLazyImpl.getValue(LazyJVM.kt:83)
+03-16 10:11:05.300 25260 25260 E AndroidRuntime: 	at com.posandroid.MainApplication.getReactHost(MainApplication.kt:12)
+03-16 10:11:05.300 25260 25260 E AndroidRuntime: 	at com.facebook.react.ReactActivityDelegate.getReactHost(ReactActivityDelegate.java:109)
+03-16 10:11:05.300 25260 25260 E AndroidRuntime: 	at com.facebook.react.ReactActivityDelegate.lambda$onCreate$0(ReactActivityDelegate.java:152)
+03-16 10:11:05.300 25260 25260 E AndroidRuntime: 	at com.facebook.react.ReactActivityDelegate.$r8$lambda$HPdXfLmAU1y4Wc1XbwAHziPP2WA(Unknown Source:0)
+03-16 10:11:05.300 25260 25260 E AndroidRuntime: 	at com.facebook.react.ReactActivityDelegate$$ExternalSyntheticLambda0.run(D8$$SyntheticClass:0)
+03-16 10:11:05.300 25260 25260 E AndroidRuntime: 	at com.facebook.systrace.Systrace.traceSection(Systrace.kt:35)
+03-16 10:11:05.300 25260 25260 E AndroidRuntime: 	at com.facebook.react.ReactActivityDelegate.onCreate(ReactActivityDelegate.java:132)
+03-16 10:11:05.300 25260 25260 E AndroidRuntime: 	at com.facebook.react.ReactActivity.onCreate(ReactActivity.java:61)
+03-16 10:11:05.300 25260 25260 E AndroidRuntime: 	at android.app.Activity.performCreate(Activity.java:9149)
+03-16 10:11:05.300 25260 25260 E AndroidRuntime: 	at android.app.Activity.performCreate(Activity.java:9127)
+03-16 10:11:05.300 25260 25260 E AndroidRuntime: 	at android.app.Instrumentation.callActivityOnCreate(Instrumentation.java:1526)
+03-16 10:11:05.300 25260 25260 E AndroidRuntime: 	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:4156)
+03-16 10:11:05.300 25260 25260 E AndroidRuntime: 	at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:4365)
+03-16 10:11:05.300 25260 25260 E AndroidRuntime: 	at android.app.servertransaction.LaunchActivityItem.execute(LaunchActivityItem.java:112)
+03-16 10:11:05.300 25260 25260 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.executeNonLifecycleItem(TransactionExecutor.java:174)
+03-16 10:11:05.300 25260 25260 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.executeTransactionItems(TransactionExecutor.java:109)
+03-16 10:11:05.300 25260 25260 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.execute(TransactionExecutor.java:81)
+03-16 10:11:05.300 25260 25260 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2751)
+03-16 10:11:05.300 25260 25260 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:112)
+03-16 10:11:05.300 25260 25260 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:268)
+03-16 10:11:05.300 25260 25260 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:384)
+03-16 10:11:05.300 25260 25260 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:8936)
+03-16 10:11:05.300 25260 25260 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+03-16 10:11:05.300 25260 25260 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:580)
+03-16 10:11:05.300 25260 25260 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:907)
+03-16 10:11:05.397  1997  2200 E ActivityManager: Failure starting process com.twitter.android
+03-16 10:11:05.397  1997  2200 E ActivityManager: java.lang.RuntimeException: SmartBackground restriction
+03-16 10:11:05.397  1997  2200 E ActivityManager: 	at com.android.server.am.ProcessList.startProcess(ProcessList.java:2595)
+03-16 10:11:05.397  1997  2200 E ActivityManager: 	at com.android.server.am.ProcessList.lambda$handleProcessStart$2(ProcessList.java:2369)
+03-16 10:11:05.397  1997  2200 E ActivityManager: 	at com.android.server.am.ProcessList.$r8$lambda$7tA7FGK86Ca7_MUb7SZX_VtkDjI(ProcessList.java:0)
+03-16 10:11:05.397  1997  2200 E ActivityManager: 	at com.android.server.am.ProcessList$$ExternalSyntheticLambda6.run(R8$$SyntheticClass:0)
+03-16 10:11:05.397  1997  2200 E ActivityManager: 	at com.android.server.am.ProcessList.handleProcessStart(ProcessList.java:2396)
+03-16 10:11:05.397  1997  2200 E ActivityManager: 	at com.android.server.am.ProcessList.lambda$startProcessLocked$1(ProcessList.java:2335)
+03-16 10:11:05.397  1997  2200 E ActivityManager: 	at com.android.server.am.ProcessList.$r8$lambda$CJ9r0QvrztLxvJRHzZHIx3Om9NE(ProcessList.java:0)
+03-16 10:11:05.397  1997  2200 E ActivityManager: 	at com.android.server.am.ProcessList$$ExternalSyntheticLambda5.run(R8$$SyntheticClass:0)
+03-16 10:11:05.397  1997  2200 E ActivityManager: 	at android.os.Handler.handleCallback(Handler.java:1001)
+03-16 10:11:05.397  1997  2200 E ActivityManager: 	at android.os.Handler.dispatchMessage(Handler.java:105)
+03-16 10:11:05.397  1997  2200 E ActivityManager: 	at android.os.Looper.loopOnce(Looper.java:268)
+03-16 10:11:05.397  1997  2200 E ActivityManager: 	at android.os.Looper.loop(Looper.java:384)
+03-16 10:11:05.397  1997  2200 E ActivityManager: 	at android.os.HandlerThread.run(HandlerThread.java:103)
+03-16 10:11:05.397  1997  2200 E ActivityManager: 	at com.android.server.ServiceThread.run(ServiceThread.java:46)
+03-16 10:11:05.404  1997  1997 E JobServiceContext: Binding died for 0:com.twitter.android
+03-16 10:11:05.910 25311 25311 E JavaBinder: !!! FAILED BINDER TRANSACTION !!!  (parcel size = 308)
+03-16 10:11:06.092 25311 25311 E ActivityThread: Failed to find provider info for com.motorola.securevault.provider
+03-16 10:11:06.097 25311 25311 E MM.MotoApp: PackageManager.NameNotFoundException: com.motorola.motofpstouch
+03-16 10:11:06.097 25311 25311 E MM.MotoApp: PackageManager.NameNotFoundException: com.motorola.motoedgeassistant
+03-16 10:11:06.098 25311 25311 E MM.MotoApp: PackageManager.NameNotFoundException: com.motorola.motowaves
+03-16 10:11:06.116  1311  3758 E ANDR-PERF-LM: VmRssMeter:: start() 453: Could not find pid, can not collect vmrss data
+03-16 10:11:06.118  1311  3759 E ANDR-PERF-LM: VmRssMeter:: start() 453: Could not find pid, can not collect vmrss data
+03-16 10:11:06.118  1311  3759 E ANDR-PERF-LM: AdaptiveLaunch: writeToDataBase() 64: Meter aborted or could not get meter data for this run
+03-16 10:11:06.279 25345 25345 E LockScreen_Utils: loadClockFaceStyleFromStorage: cost 3
+03-16 10:11:06.284 25345 25345 E Styles  : getprop ro.boot.hardware.color=[brilliantblue]
+03-16 10:11:06.318 25345 25345 E PersonalizeApplication: onCreate: oho! android.permission.CUSTOMIZE_SYSTEM_UI is not granted
+03-16 10:11:06.394  1632  3129 E VendorTagDescriptor: lookupTag: Tag name 'support_get_property_2_0' does not exist.
+03-16 10:11:06.399  1632  3129 E VendorTagDescriptor: lookupTag: Tag name 'support_get_property_2_0' does not exist.
+03-16 10:11:06.435 25311 25311 E MM.MotoApp: PackageManager.NameNotFoundException: com.motorola.magictouch
+03-16 10:11:06.509 25311 25391 E ActivityThread: Failed to find provider info for com.motorola.magictouch.provider
+03-16 10:11:06.513 25311 25391 E ActivityThread: Failed to find provider info for com.motorola.securevault.provider
+03-16 10:11:06.516 25311 25391 E ActivityThread: Failed to find provider info for com.motorola.motofpstouch.provider
+03-16 10:11:06.516 25311 25391 E ActivityThread: Failed to find provider info for com.motorola.motoedgeassistant.provide
+03-16 10:11:06.517 25311 25400 E ActivityThread: Failed to find provider info for com.motorola.magictouch.provider
+03-16 10:11:06.519 25311 25393 E ActivityThread: Failed to find provider info for com.motorola.motowaves.provider.moto
+03-16 10:11:06.522 25311 25394 E ActivityThread: Failed to find provider info for com.motorola.magictouch.provider
+03-16 10:11:06.525 25311 25405 E ActivityThread: Failed to find provider info for com.motorola.motoedgeassistant.provider
+03-16 10:11:06.527 25311 25391 E ActivityThread: Failed to find provider info for com.motorola.motowaves.provider.moto
+03-16 10:11:06.531 25311 25396 E m.motorola.moto: No package ID ff found for resource ID 0xffffffff.
+03-16 10:11:06.531 25311 25396 E MM.MotoApp: Resources.NotFoundException: String resource ID #0xffffffff
+03-16 10:11:06.531 25311 25396 E m.motorola.moto: No package ID ff found for resource ID 0xffffffff.
+03-16 10:11:06.531 25311 25396 E MM.MotoApp: Resources.NotFoundException: String resource ID #0xffffffff
+03-16 10:11:06.532 25311 25393 E ActivityThread: Failed to find provider info for com.motorola.motofpstouch.provider
+03-16 10:11:06.535 21773 21781 E MotoFreeForm: [FeaturesProvider] getHeroesItem state = 1
+03-16 10:11:06.537 25311 25439 E ActivityThread: Failed to find provider info for com.motorola.motoedgeassistant.provider
+03-16 10:11:06.539 25311 25416 E ActivityThread: Failed to find provider info for com.motorola.motofpstouch.provider
+03-16 10:11:06.543 25311 25406 E ActivityThread: Failed to find provider info for com.motorola.securevault.provider
+03-16 10:11:06.544 25311 25441 E ActivityThread: Failed to find provider info for com.motorola.motowaves.provider.moto
+03-16 10:11:06.547 25311 25406 E ActivityThread: Failed to find provider info for com.motorola.magictouch.provider
+03-16 10:11:06.548  3102 29815 E MotoActions: Exception
+03-16 10:11:06.548  3102 29815 E MotoActions: android.provider.Settings$SettingNotFoundException: adaptive_sleep
+03-16 10:11:06.548  3102 29815 E MotoActions: 	at android.provider.Settings.parseIntSetting(Settings.java:3979)
+03-16 10:11:06.548  3102 29815 E MotoActions: 	at android.provider.Settings.-$$Nest$smparseIntSetting(Unknown Source:0)
+03-16 10:11:06.548  3102 29815 E MotoActions: 	at android.provider.Settings$Secure.getIntForUser(Settings.java:7227)
+03-16 10:11:06.548  3102 29815 E MotoActions: 	at android.provider.Settings$Secure.getInt(Settings.java:7220)
+03-16 10:11:06.548  3102 29815 E MotoActions: 	at w4.G.b(Unknown Source:18)
+03-16 10:11:06.548  3102 29815 E MotoActions: 	at j9.a.x(Unknown Source:2)
+03-16 10:11:06.548  3102 29815 E MotoActions: 	at t4.a.f(Unknown Source:34)
+03-16 10:11:06.548  3102 29815 E MotoActions: 	at r4.c.g(Unknown Source:108)
+03-16 10:11:06.548  3102 29815 E MotoActions: 	at d4.b.h(Unknown Source:39)
+03-16 10:11:06.548  3102 29815 E MotoActions: 	at com.motorola.actions.core.settings.provider.ActionsSettingsProvider.a(Unknown Source:364)
+03-16 10:11:06.548  3102 29815 E MotoActions: 	at com.motorola.actions.core.settings.provider.ActionsSettingsProvider.query(Unknown Source:82)
+03-16 10:11:06.548  3102 29815 E MotoActions: 	at android.content.ContentProvider.query(ContentProvider.java:1667)
+03-16 10:11:06.548  3102 29815 E MotoActions: 	at android.content.ContentProvider.query(ContentProvider.java:1763)
+03-16 10:11:06.548  3102 29815 E MotoActions: 	at android.content.ContentProvider$Transport.query(ContentProvider.java:305)
+03-16 10:11:06.548  3102 29815 E MotoActions: 	at android.content.ContentProviderNative.onTransact(ContentProviderNative.java:107)
+03-16 10:11:06.548  3102 29815 E MotoActions: 	at android.os.Binder.execTransactInternal(Binder.java:1515)
+03-16 10:11:06.548  3102 29815 E MotoActions: 	at android.os.Binder.execTransact(Binder.java:1453)
+03-16 10:11:06.548 25311 25406 E ActivityThread: Failed to find provider info for com.motorola.securevault.provider
+03-16 10:11:06.550 25311 25394 E ActivityThread: Failed to find provider info for com.motorola.motofpstouch.provider
+03-16 10:11:06.551 25311 25403 E ActivityThread: Failed to find provider info for com.motorola.securevault.provider
+03-16 10:11:06.554 25311 25394 E ActivityThread: Failed to find provider info for com.motorola.motoedgeassistant.provider
+03-16 10:11:06.559 25311 25403 E ActivityThread: Failed to find provider info for com.motorola.motowaves.provider.moto
+03-16 10:11:06.566 25311 25439 E m.motorola.moto: No package ID ff found for resource ID 0xffffffff.
+03-16 10:11:06.568 25311 25439 E MM.MotoApp: Resources.NotFoundException: String resource ID #0xffffffff
+03-16 10:11:06.568 25311 25439 E m.motorola.moto: No package ID ff found for resource ID 0xffffffff.
+03-16 10:11:06.568 25311 25439 E MM.MotoApp: Resources.NotFoundException: String resource ID #0xffffffff
+03-16 10:11:06.568 25311 25439 E m.motorola.moto: Invalid resource ID 0x00000000.
+03-16 10:11:06.568 25311 25439 E MM.MotoApp: Resources.NotFoundException: String resource ID #0x0
+03-16 10:11:06.569 25311 25439 E m.motorola.moto: Invalid resource ID 0x00000000.
+03-16 10:11:06.569 25311 25439 E MM.MotoApp: Resources.NotFoundException: String resource ID #0x0
+03-16 10:11:06.572 25311 25404 E MM.MotoApp: Resources.NotFoundException: Unable to find resource ID #0x7f0801d1
+03-16 10:11:06.577 25311 25425 E m.motorola.moto: Invalid resource ID 0x00000000.
+03-16 10:11:06.577 25311 25425 E MM.MotoApp: Resources.NotFoundException: String resource ID #0x0
+03-16 10:11:06.577 25311 25425 E m.motorola.moto: No package ID ff found for resource ID 0xffffffff.
+03-16 10:11:06.577 25311 25425 E MM.MotoApp: Resources.NotFoundException: String resource ID #0xffffffff
+03-16 10:11:06.577 25311 25425 E m.motorola.moto: No package ID ff found for resource ID 0xffffffff.
+03-16 10:11:06.579 25311 25425 E MM.MotoApp: Resources.NotFoundException: String resource ID #0xffffffff
+03-16 10:11:06.581 25311 25438 E m.motorola.moto: Invalid resource ID 0x00000000.
+03-16 10:11:06.582 25311 25438 E MM.MotoApp: Resources.NotFoundException: String resource ID #0x0
+03-16 10:11:06.582 25311 25438 E m.motorola.moto: Invalid resource ID 0x00000000.
+03-16 10:11:06.582 25311 25438 E MM.MotoApp: Resources.NotFoundException: String resource ID #0x0
+03-16 10:11:06.582 25311 25401 E m.motorola.moto: Invalid resource ID 0x00000000.
+03-16 10:11:06.582 25311 25401 E MM.MotoApp: Resources.NotFoundException: String resource ID #0x0
+03-16 10:11:06.582 25311 25401 E m.motorola.moto: No package ID ff found for resource ID 0xffffffff.
+03-16 10:11:06.582 25311 25401 E MM.MotoApp: Resources.NotFoundException: String resource ID #0xffffffff
+03-16 10:11:06.582 25311 25401 E m.motorola.moto: No package ID ff found for resource ID 0xffffffff.
+03-16 10:11:06.582 25311 25401 E MM.MotoApp: Resources.NotFoundException: String resource ID #0xffffffff
+03-16 10:11:06.582 25311 25401 E m.motorola.moto: Invalid resource ID 0x00000000.
+03-16 10:11:06.582 25311 25401 E MM.MotoApp: Resources.NotFoundException: String resource ID #0x0
+03-16 10:11:06.582 25311 25401 E m.motorola.moto: No package ID ff found for resource ID 0xffffffff.
+03-16 10:11:06.583 25311 25401 E MM.MotoApp: Resources.NotFoundException: String resource ID #0xffffffff
+03-16 10:11:06.583 25311 25401 E m.motorola.moto: No package ID ff found for resource ID 0xffffffff.
+03-16 10:11:06.583 25311 25401 E MM.MotoApp: Resources.NotFoundException: String resource ID #0xffffffff
+03-16 10:11:06.583 25311 25401 E m.motorola.moto: Invalid resource ID 0x00000000.
+03-16 10:11:06.583 25311 25401 E MM.MotoApp: Resources.NotFoundException: String resource ID #0x0
+03-16 10:11:06.583 25311 25401 E m.motorola.moto: No package ID ff found for resource ID 0xffffffff.
+03-16 10:11:06.583 25311 25401 E MM.MotoApp: Resources.NotFoundException: String resource ID #0xffffffff
+03-16 10:11:06.583 25311 25401 E m.motorola.moto: No package ID ff found for resource ID 0xffffffff.
+03-16 10:11:06.583 25311 25401 E MM.MotoApp: Resources.NotFoundException: String resource ID #0xffffffff
+03-16 10:11:06.583 25311 25395 E m.motorola.moto: No package ID ff found for resource ID 0xffffffff.
+03-16 10:11:06.583 25311 25395 E MM.MotoApp: Resources.NotFoundException: String resource ID #0xffffffff
+03-16 10:11:06.583 25311 25395 E m.motorola.moto: No package ID ff found for resource ID 0xffffffff.
+03-16 10:11:06.583 25311 25395 E MM.MotoApp: Resources.NotFoundException: String resource ID #0xffffffff
+03-16 10:11:06.584 25311 25395 E m.motorola.moto: No package ID ff found for resource ID 0xffffffff.
+03-16 10:11:06.584 25311 25395 E MM.MotoApp: Resources.NotFoundException: String resource ID #0xffffffff
+03-16 10:11:06.584 25311 25395 E m.motorola.moto: No package ID ff found for resource ID 0xffffffff.
+03-16 10:11:06.584 25311 25395 E MM.MotoApp: Resources.NotFoundException: String resource ID #0xffffffff
+03-16 10:11:06.584 25311 25395 E m.motorola.moto: No package ID ff found for resource ID 0xffffffff.
+03-16 10:11:06.584 25311 25395 E MM.MotoApp: Resources.NotFoundException: String resource ID #0xffffffff
+03-16 10:11:06.584 25311 25395 E m.motorola.moto: No package ID ff found for resource ID 0xffffffff.
+03-16 10:11:06.584 25311 25395 E MM.MotoApp: Resources.NotFoundException: String resource ID #0xffffffff
+03-16 10:11:06.584 25311 25395 E m.motorola.moto: No package ID ff found for resource ID 0xffffffff.
+03-16 10:11:06.584 25311 25395 E MM.MotoApp: Resources.NotFoundException: String resource ID #0xffffffff
+03-16 10:11:06.584 25311 25395 E m.motorola.moto: No package ID ff found for resource ID 0xffffffff.
+03-16 10:11:06.584 25311 25395 E MM.MotoApp: Resources.NotFoundException: String resource ID #0xffffffff
+03-16 10:11:06.588 25311 25391 E m.motorola.moto: Invalid resource ID 0x00000000.
+03-16 10:11:06.588 25311 25391 E MM.MotoApp: Resources.NotFoundException: String resource ID #0x0
+03-16 10:11:06.588 25311 25391 E m.motorola.moto: No package ID ff found for resource ID 0xffffffff.
+03-16 10:11:06.588 25311 25391 E MM.MotoApp: Resources.NotFoundException: String resource ID #0xffffffff
+03-16 10:11:06.588 25311 25391 E m.motorola.moto: No package ID ff found for resource ID 0xffffffff.
+03-16 10:11:06.589 25311 25391 E MM.MotoApp: Resources.NotFoundException: String resource ID #0xffffffff
+03-16 10:11:06.589  1997  3116 E PersistenceController: SettingNotFoundException: sv_hide_in_moto_secure
+03-16 10:11:06.604  3051  3051 E SmsApplication: com.google.android.apps.messaging lost android:read_cell_broadcasts:  (fixing)
+03-16 10:11:06.609  3051  3051 E SmsApplication: isSystemPackage NameNotFoundException:com.motorola.cn.devicemigration
+03-16 10:11:06.625 25311 25442 E motorolaid: com.motorola.account
+03-16 10:11:06.635  1997  4454 E RoleControllerServiceImpl: Default/fallback role holder package doesn't qualify for the role, package: com.google.android.gms.supervision, role: android.app.role.SYSTEM_SUPERVISION, user: 0
+03-16 10:11:06.692  1997  4454 E RoleControllerServiceImpl: Default/fallback role holder package doesn't qualify for the role, package: com.motorola.paks, role: android.app.role.SYSTEM_FINANCED_DEVICE_CONTROLLER, user: 0
+03-16 10:11:06.787  1997  4503 E PersistenceController: SettingNotFoundException: sv_custom_ai_icon_enabled
+03-16 10:11:06.801  1997  5126 E PersistenceController: SettingNotFoundException: sv_custom_ai_icon_enabled
+03-16 10:11:07.165  1311  1403 E ANDR-PERF-UTIL: Failed to update node /proc/25260/sched_boost with value 0
+03-16 10:11:07.165  1311  1403 E ANDR-PERF-OPTSHANDLER: can't reset task 25260
+03-16 10:11:07.165  1311  1403 E ANDR-PERF-RESOURCEQS: Failed to reset optimization [3, 32]
+03-16 10:11:08.351  3051  3051 E SmsApplication: com.google.android.apps.messaging lost android:read_cell_broadcasts:  (fixing)
+03-16 10:11:08.356  1997  5127 E PersistenceController: SettingNotFoundException: sv_custom_ai_icon_enabled
+03-16 10:11:08.356  3051  3051 E SmsApplication: isSystemPackage NameNotFoundException:com.motorola.cn.devicemigration
+03-16 10:11:08.360  1997  4454 E RoleControllerServiceImpl: Default/fallback role holder package doesn't qualify for the role, package: com.google.android.gms.supervision, role: android.app.role.SYSTEM_SUPERVISION, user: 0
+03-16 10:11:08.365  1997  5126 E PersistenceController: SettingNotFoundException: sv_custom_ai_icon_enabled
+03-16 10:11:08.398  1997  4454 E RoleControllerServiceImpl: Default/fallback role holder package doesn't qualify for the role, package: com.motorola.paks, role: android.app.role.SYSTEM_FINANCED_DEVICE_CONTROLLER, user: 0
+03-16 10:11:08.957  1311  1311 E ANDR-PERF-REQUEST: Qindx 137 is  not supported
+03-16 10:11:08.957  1311  1311 E ANDR-PERF-REQUEST: invalid request
+03-16 10:11:08.957  1311  1311 E ANDR-PERF-MPCTL: invalid request, no optimizations performed
+03-16 10:11:09.094  1997  4692 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
