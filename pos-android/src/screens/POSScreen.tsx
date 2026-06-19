@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState, useCallback, useRef } from 'react';
 import { View, Text, TouchableOpacity, FlatList, Image, Alert, useWindowDimensions, Modal, TextInput, ScrollView, Animated, Vibration, PermissionsAndroid, Platform } from 'react-native';
 import tw, { useAppColorScheme } from 'twrnc';
 import { useStore } from '../store/useStore';
