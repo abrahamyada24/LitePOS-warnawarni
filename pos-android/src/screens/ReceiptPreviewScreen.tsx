@@ -9,6 +9,8 @@ import { useStore } from '../store/useStore';
 import { BLEPrinter, USBPrinter } from 'react-native-thermal-receipt-printer-image-qr';
 import { requestPrinterPermissions } from '../utils/permissions';
 import { RECEIPT_LOGO_BASE64 } from '../assets/receiptLogoBase64';
+import RNFS from 'react-native-fs';
+import { API_URL } from '../services/api';
 
 // Logo LitePOS permanen - tidak perlu setting
 const LITEPOS_LOGO = require('../assets/logo.png');
@@ -188,9 +190,18 @@ export default function ReceiptPreviewScreen({ route, navigation }: any) {
                 }
             } catch { /* Already connected */ }
 
-            if (settings.showLogoOnReceipt !== false) {
+            if (settings.showLogoOnReceipt === true || settings.showLogoOnReceipt === 'true') {
                 try {
-                    await printerClass.printImageBase64(RECEIPT_LOGO_BASE64, { imageWidth: 180 });
+                    let logoToPrint = RECEIPT_LOGO_BASE64;
+                    if (settings.storeLogo) {
+                        const logoUrl = settings.storeLogo.startsWith('http') ? settings.storeLogo : `${API_URL}${settings.storeLogo}`;
+                        const tempFile = `${RNFS.CachesDirectoryPath}/temp_print_logo.png`;
+                        const res = await RNFS.downloadFile({ fromUrl: logoUrl, toFile: tempFile }).promise;
+                        if (res.statusCode === 200) {
+                            logoToPrint = await RNFS.readFile(tempFile, 'base64');
+                        }
+                    }
+                    await printerClass.printImageBase64(logoToPrint, { imageWidth: 180 });
                     await new Promise<void>(resolve => setTimeout(() => resolve(), 500));
                 } catch (logoErr) {
                     console.log('Logo print failed:', logoErr);

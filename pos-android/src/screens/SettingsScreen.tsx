@@ -15,6 +15,7 @@ import RNFS from 'react-native-fs';
 import { pick, types } from '@react-native-documents/picker';
 import { requestPrinterPermissions } from '../utils/permissions';
 import { RECEIPT_LOGO_BASE64 } from '../assets/receiptLogoBase64';
+import { API_URL } from '../services/api';
 
 if (Platform.OS === 'android' && UIManager.setLayoutAnimationEnabledExperimental) {
     UIManager.setLayoutAnimationEnabledExperimental(true);
@@ -250,9 +251,18 @@ export default function SettingsScreen({ navigation }: any) {
             } catch (e) { /* Already connected */ }
 
             // Print logo
-            if (showLogoOnReceipt) {
+            if (showLogoOnReceipt === true || showLogoOnReceipt === 'true') {
                 try {
-                    await printerClass.printImageBase64(RECEIPT_LOGO_BASE64, { imageWidth: 180 });
+                    let logoToPrint = RECEIPT_LOGO_BASE64;
+                    if (storeLogo) {
+                        const logoUrl = storeLogo.startsWith('http') ? storeLogo : `${API_URL}${storeLogo}`;
+                        const tempFile = `${RNFS.CachesDirectoryPath}/temp_print_logo.png`;
+                        const res = await RNFS.downloadFile({ fromUrl: logoUrl, toFile: tempFile }).promise;
+                        if (res.statusCode === 200) {
+                            logoToPrint = await RNFS.readFile(tempFile, 'base64');
+                        }
+                    }
+                    await printerClass.printImageBase64(logoToPrint, { imageWidth: 180 });
                     await new Promise<void>(resolve => setTimeout(() => resolve(), 1500));
                 } catch (logoErr) {
                     console.warn('Logo print failed (lanjut cetak teks):', logoErr);
