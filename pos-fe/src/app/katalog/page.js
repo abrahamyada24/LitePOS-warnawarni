@@ -155,9 +155,13 @@ export default function KatalogPage() {
                                                 <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
                                             </div>
                                         )}
-                                        {lowStock && (
+                                        {product.stock <= 5 ? (
                                             <div className="absolute top-2 left-2 bg-white/90 backdrop-blur-sm px-2 py-0.5 rounded-full text-[10px] font-bold text-red-500 shadow-sm">
-                                                &lt; 5 Stok
+                                                Sisa {product.stock} Stok
+                                            </div>
+                                        ) : (
+                                            <div className="absolute top-2 left-2 bg-white/90 backdrop-blur-sm px-2 py-0.5 rounded-full text-[10px] font-bold text-gray-700 shadow-sm">
+                                                {product.stock} Stok
                                             </div>
                                         )}
                                     </div>
@@ -186,7 +190,7 @@ export default function KatalogPage() {
                                     <div className="flex-1">
                                         <h3 className="text-gray-800 font-medium">{product.name}</h3>
                                         <p className="font-bold text-gray-900 mt-1">{formatRupiah(product.price)}<span className="text-xs text-gray-400 font-normal"> /Pcs</span></p>
-                                        {lowStock && <p className="text-xs text-red-500 mt-1 font-medium">&lt; 5 Stok</p>}
+                                        <p className={`text-xs mt-1 font-medium ${product.stock <= 5 ? 'text-red-500' : 'text-gray-500'}`}>{product.stock} Stok</p>
                                     </div>
                                     <button className="w-10 h-10 rounded-full bg-green-50 text-green-600 flex items-center justify-center shrink-0">
                                         <MessageCircle size={20} />
@@ -201,7 +205,7 @@ export default function KatalogPage() {
                                 <div>
                                     <h3 className="text-gray-800 font-medium">{product.name}</h3>
                                     <p className="font-bold text-gray-900 mt-1">{formatRupiah(product.price)}<span className="text-xs text-gray-400 font-normal"> /Pcs</span></p>
-                                    {lowStock && <p className="text-xs text-red-500 mt-1 font-medium">&lt; 5 Stok</p>}
+                                    <p className={`text-xs mt-1 font-medium ${product.stock <= 5 ? 'text-red-500' : 'text-gray-500'}`}>{product.stock} Stok</p>
                                 </div>
                                 <button className="w-8 h-8 text-green-500">
                                     <MessageCircle size={22} />
