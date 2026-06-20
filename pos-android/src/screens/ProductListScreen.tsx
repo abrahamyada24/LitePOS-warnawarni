@@ -10,6 +10,7 @@ import { BLEPrinter, USBPrinter } from 'react-native-thermal-receipt-printer-ima
 import { launchImageLibrary } from 'react-native-image-picker';
 import { useStore } from '../store/useStore';
 import { requestPrinterPermissions } from '../utils/permissions';
+import RNFS from 'react-native-fs';
 
 const formatRp = (num: number) => 'Rp ' + (Math.round(num) || 0).toLocaleString('id-ID');
 
@@ -209,14 +210,18 @@ export default function ProductListScreen({ navigation }: any) {
             await printerClass.printText(`\n\n`);
             await printerClass.printText(`<C>${product.name.toUpperCase()}</C>\n`);
             try {
-                await printerClass.printBarCode(product.barcode, 73, 2, 64, 0, 2);
-            } catch (e) {
-                console.log("Print Barcode Error:", e);
-                try {
-                    await printerClass.printQRCode(product.barcode, 200, 2); // Fallback ke QR
-                } catch (qrErr) {
-                    console.log("Print QR Error:", qrErr);
+                const barcodeUrl = `https://barcode.orcascan.com/?type=code128&data=${encodeURIComponent(product.barcode)}`;
+                const tempFile = `${RNFS.CachesDirectoryPath}/temp_barcode.png`;
+                const res = await RNFS.downloadFile({ fromUrl: barcodeUrl, toFile: tempFile }).promise;
+                if (res.statusCode === 200) {
+                    const base64Image = await RNFS.readFile(tempFile, 'base64');
+                    await printerClass.printImageBase64(base64Image, { imageWidth: 300 });
+                } else {
+                    await printerClass.printText(`<C>[Gagal Unduh Barcode]</C>\n`);
                 }
+            } catch (err) {
+                console.log("Barcode Error:", err);
+                await printerClass.printText(`<C>[Gambar Barcode Gagal]</C>\n`);
             }
             await printerClass.printText(`<C>${product.barcode}</C>\n`);
             await printerClass.printText(`\n\n\n\n`);

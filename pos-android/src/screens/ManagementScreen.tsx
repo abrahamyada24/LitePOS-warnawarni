@@ -10,6 +10,7 @@ import { useStore } from '../store/useStore';
 import StockReceivingScreen from './StockReceivingScreen';
 import StockOpnameScreen from './StockOpnameScreen';
 import { requestPrinterPermissions } from '../utils/permissions';
+import RNFS from 'react-native-fs';
 
 type TabType = 'products' | 'categories' | 'customers' | 'penerimaan' | 'opname' | 'stokDarurat';
 
@@ -228,7 +229,21 @@ export default function ManagementScreen({ navigation }: any) {
             // Print Barcode format CODE128 (73), width=2, height=64, HRI=below (2)
             await printerClass.printText(`\n\n`);
             await printerClass.printText(`<C>${product.name.toUpperCase()}</C>\n`);
-            await printerClass.printBarCode(product.barcode, 73, 2, 64, 2);
+            try {
+                const barcodeUrl = `https://barcode.orcascan.com/?type=code128&data=${encodeURIComponent(product.barcode)}`;
+                const tempFile = `${RNFS.CachesDirectoryPath}/temp_barcode.png`;
+                const res = await RNFS.downloadFile({ fromUrl: barcodeUrl, toFile: tempFile }).promise;
+                if (res.statusCode === 200) {
+                    const base64Image = await RNFS.readFile(tempFile, 'base64');
+                    await printerClass.printImageBase64(base64Image, { imageWidth: 300 });
+                } else {
+                    await printerClass.printText(`<C>[Gagal Unduh Barcode]</C>\n`);
+                }
+            } catch (err) {
+                console.log("Barcode Error:", err);
+                await printerClass.printText(`<C>[Gambar Barcode Gagal]</C>\n`);
+            }
+            await printerClass.printText(`<C>${product.barcode}</C>\n`);
             await printerClass.printText(`\n\n\n\n`);
 
             if (settings.printerType === 'BLE') {
