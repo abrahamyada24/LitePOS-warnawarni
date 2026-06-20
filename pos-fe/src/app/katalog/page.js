@@ -44,7 +44,7 @@ export default function KatalogPage() {
     };
 
     const openWhatsApp = (product) => {
-        let phone = settings?.storePhone || '';
+        let phone = settings?.phone || '';
         if (!phone) {
             alert('Nomor WhatsApp toko belum diatur.');
             return;
@@ -215,7 +215,7 @@ export default function KatalogPage() {
             {/* Global Floating WA Button (Optional, for general inquiry) */}
             <button 
                 onClick={() => {
-                    let phone = settings?.storePhone || '';
+                    let phone = settings?.phone || '';
                     if (!phone) return;
                     if (phone.startsWith('0')) phone = '62' + phone.slice(1);
                     phone = phone.replace(/\D/g, '');
