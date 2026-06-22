@@ -3,9 +3,10 @@ const prisma = new PrismaClient();
 
 exports.getPublicCatalog = async (req, res) => {
     try {
-        // Ambil produk yang stoknya > 0, termasuk informasi kategorinya
+        // Ambil produk yang AKTIF dan stoknya > 0, termasuk informasi kategorinya
         const products = await prisma.product.findMany({
             where: {
+                isActive: true,
                 stock: {
                     gt: 0
                 }
@@ -18,8 +19,12 @@ exports.getPublicCatalog = async (req, res) => {
             }
         });
 
-        // Ambil semua kategori untuk filter dropdown di frontend
+        // Ambil kategori yang memiliki produk aktif dengan stok > 0
+        const activeCategoryIds = [...new Set(products.map(p => p.categoryId))];
         const categories = await prisma.category.findMany({
+            where: {
+                id: { in: activeCategoryIds }
+            },
             orderBy: {
                 name: 'asc'
             }
